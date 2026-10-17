@@ -1,0 +1,670 @@
+{
+  "generated_at": "2026-10-17 10:56:26",
+  "platform": {
+    "arch": "s390x",
+    "byteorder": "big",
+    "system": "Linux",
+    "platform": "Linux-6.8.0-147-generic-s390x-with-glibc2.39",
+    "hostname": "scamshield",
+    "python": "3.12.3",
+    "cpus": 3,
+    "mem_gib": 7.82,
+    "features_has_nnpa": true,
+    "machine_type": "9175",
+    "libs": {
+      "numpy": "1.26.4",
+      "pandas": "2.1.4+dfsg",
+      "sklearn": "1.4.1.post1",
+      "torch": "2.14.1+cpu",
+      "flask": "3.0.2"
+    }
+  },
+  "model_version": "ss-20261017-105456",
+  "trained_on_arch": "s390x",
+  "thresholds": {
+    "high": 0.4748,
+    "med": 0.2374,
+    "targets": {
+      "high_precision": 0.95,
+      "med_recall": 0.97,
+      "med_max_fraction_of_high": 0.5
+    }
+  },
+  "sets": {
+    "test_in": {
+      "n": 916,
+      "systems": {
+        "B0_rules_only": {
+          "pr_auc": 0.3572,
+          "roc_auc": 0.6105,
+          "recall_at_fpr_1pct": 0.195
+        },
+        "B1_naive_bayes": {
+          "pr_auc": 0.9829,
+          "roc_auc": 0.9908,
+          "recall_at_fpr_1pct": 0.9497
+        },
+        "text_tfidf_lr": {
+          "pr_auc": 0.9875,
+          "roc_auc": 0.9949,
+          "recall_at_fpr_1pct": 0.9686
+        },
+        "text_char_cnn": {
+          "pr_auc": 0.9795,
+          "roc_auc": 0.9914,
+          "recall_at_fpr_1pct": 0.9497
+        },
+        "scamshield_full": {
+          "pr_auc": 0.9869,
+          "roc_auc": 0.9946,
+          "recall_at_fpr_1pct": 0.9686
+        }
+      },
+      "scamshield_levels": {
+        "n": 916,
+        "n_pos": 159,
+        "n_neg": 757,
+        "recall_high": 0.9686,
+        "recall_flagged": 0.9748,
+        "fpr_high": 0.0053,
+        "fpr_flagged": 0.0211,
+        "precision_high": 0.9747
+      },
+      "scamshield_ci": {
+        "pr_auc_95ci": [
+          0.9733,
+          0.9975
+        ],
+        "recall_high_95ci": [
+          0.9416,
+          0.9936
+        ],
+        "fpr_high_95ci": [
+          0.0013,
+          0.0107
+        ]
+      },
+      "batch_ms_per_msg": 1.919
+    },
+    "test_india": {
+      "n": 461,
+      "systems": {
+        "B0_rules_only": {
+          "pr_auc": 0.9258,
+          "roc_auc": 0.9362,
+          "recall_at_fpr_1pct": 0.7228
+        },
+        "B1_naive_bayes": {
+          "pr_auc": 0.9448,
+          "roc_auc": 0.9531,
+          "recall_at_fpr_1pct": 0.7228
+        },
+        "text_tfidf_lr": {
+          "pr_auc": 0.9666,
+          "roc_auc": 0.9734,
+          "recall_at_fpr_1pct": 0.5743
+        },
+        "text_char_cnn": {
+          "pr_auc": 0.9726,
+          "roc_auc": 0.9791,
+          "recall_at_fpr_1pct": 0.5941
+        },
+        "scamshield_full": {
+          "pr_auc": 0.997,
+          "roc_auc": 0.9977,
+          "recall_at_fpr_1pct": 0.9059
+        }
+      },
+      "scamshield_levels": {
+        "n": 461,
+        "n_pos": 202,
+        "n_neg": 259,
+        "recall_high": 1.0,
+        "recall_flagged": 1.0,
+        "fpr_high": 0.0656,
+        "fpr_flagged": 0.1236,
+        "precision_high": 0.9224
+      },
+      "scamshield_ci": {
+        "pr_auc_95ci": [
+          0.9939,
+          0.9992
+        ],
+        "recall_high_95ci": [
+          1.0,
+          1.0
+        ],
+        "fpr_high_95ci": [
+          0.0376,
+          0.0969
+        ]
+      },
+      "batch_ms_per_msg": 2.032,
+      "legit_transactional_fpr_high": 0.053,
+      "legit_transactional_n": 132,
+      "errors_sample": [
+        {
+          "text": "Reminder from Hyderabad Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.822
+        },
+        {
+          "text": "Reminder from Kolkata Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.863
+        },
+        {
+          "text": "Reminder from Chennai Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.834
+        },
+        {
+          "text": "reminder from lucknow society: water supply will be off tomorrow from 10 am to 2 pm for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.87
+        },
+        {
+          "text": "Reminder from Pune Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.909
+        },
+        {
+          "text": "Reminder from Delhi Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.855
+        },
+        {
+          "text": "reminder from bengaluru society: water supply will be off tomorrow from 10 am to 2 pm for tank cleaning.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.868
+        },
+        {
+          "text": "you paid rs 18,131 to uber using phonepe upi. transaction id hpy9vl8ma1.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.562
+        },
+        {
+          "text": "You paid Rs 42,590.61 to AMAZON using PhonePe UPI. Transaction ID K1NKXGST89.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.748
+        },
+        {
+          "text": "You paid Rs 6,230.49 to FLIPKART using PhonePe UPI. Transaction ID VK78M4WB.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.568
+        },
+        {
+          "text": "you paid rs 25,710 to uber using phonepe upi. transaction id eo593yuxmc.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.651
+        },
+        {
+          "text": "You paid Rs 17,513 to IRCTC using PhonePe UPI. Transaction ID T98F98T9TG.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.58
+        },
+        {
+          "text": "You paid Rs 17,519.71 to FLIPKART using PhonePe UPI. Transaction ID NIK6P0A7RM.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.848
+        },
+        {
+          "text": "You paid Rs 15,790.27 to UBER using PhonePe UPI. Transaction ID SRPH0Q5AHZ.",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.475
+        },
+        {
+          "text": "Your Aadhaar update request 150DU1QKAT has been successfully completed. -UIDAI",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.241
+        }
+      ]
+    },
+    "test_adv": {
+      "n": 36,
+      "pass_rate": 0.9444,
+      "failures": [
+        {
+          "id": "ben_08",
+          "category": "benign_scary",
+          "expect": "MEDIUM-",
+          "got": "HIGH",
+          "score": 0.602,
+          "pass": false
+        },
+        {
+          "id": "ben_09",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "HIGH",
+          "score": 0.5548,
+          "pass": false
+        }
+      ],
+      "results": [
+        {
+          "id": "obf_01",
+          "category": "obfuscation",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.9968,
+          "pass": true
+        },
+        {
+          "id": "obf_02",
+          "category": "obfuscation",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.9989,
+          "pass": true
+        },
+        {
+          "id": "obf_03",
+          "category": "obfuscation",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 1.0,
+          "pass": true
+        },
+        {
+          "id": "obf_04",
+          "category": "obfuscation",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 1.0,
+          "pass": true
+        },
+        {
+          "id": "obf_05",
+          "category": "obfuscation",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 1.0,
+          "pass": true
+        },
+        {
+          "id": "obf_06",
+          "category": "obfuscation",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.3872,
+          "pass": true
+        },
+        {
+          "id": "obf_07",
+          "category": "obfuscation",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 1.0,
+          "pass": true
+        },
+        {
+          "id": "obf_08",
+          "category": "obfuscation",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.9592,
+          "pass": true
+        },
+        {
+          "id": "ben_01",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0122,
+          "pass": true
+        },
+        {
+          "id": "ben_02",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0513,
+          "pass": true
+        },
+        {
+          "id": "ben_03",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0061,
+          "pass": true
+        },
+        {
+          "id": "ben_04",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0026,
+          "pass": true
+        },
+        {
+          "id": "ben_05",
+          "category": "benign_scary",
+          "expect": "MEDIUM-",
+          "got": "LOW",
+          "score": 0.1809,
+          "pass": true
+        },
+        {
+          "id": "ben_06",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0046,
+          "pass": true
+        },
+        {
+          "id": "ben_07",
+          "category": "benign_scary",
+          "expect": "MEDIUM-",
+          "got": "LOW",
+          "score": 0.0033,
+          "pass": true
+        },
+        {
+          "id": "ben_08",
+          "category": "benign_scary",
+          "expect": "MEDIUM-",
+          "got": "HIGH",
+          "score": 0.602,
+          "pass": false
+        },
+        {
+          "id": "ben_09",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "HIGH",
+          "score": 0.5548,
+          "pass": false
+        },
+        {
+          "id": "ben_10",
+          "category": "benign_scary",
+          "expect": "MEDIUM-",
+          "got": "LOW",
+          "score": 0.0033,
+          "pass": true
+        },
+        {
+          "id": "nolink_01",
+          "category": "no_link_scam",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.2367,
+          "pass": true
+        },
+        {
+          "id": "nolink_02",
+          "category": "no_link_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.9995,
+          "pass": true
+        },
+        {
+          "id": "nolink_03",
+          "category": "no_link_scam",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.991,
+          "pass": true
+        },
+        {
+          "id": "nolink_04",
+          "category": "no_link_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 1.0,
+          "pass": true
+        },
+        {
+          "id": "nolink_05",
+          "category": "no_link_scam",
+          "expect": "HIGH",
+          "got": "HIGH",
+          "score": 0.844,
+          "pass": true
+        },
+        {
+          "id": "nolink_06",
+          "category": "no_link_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.9945,
+          "pass": true
+        },
+        {
+          "id": "polite_01",
+          "category": "polite_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.9595,
+          "pass": true
+        },
+        {
+          "id": "polite_02",
+          "category": "polite_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.9979,
+          "pass": true
+        },
+        {
+          "id": "polite_03",
+          "category": "polite_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.8264,
+          "pass": true
+        },
+        {
+          "id": "polite_04",
+          "category": "polite_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.9995,
+          "pass": true
+        },
+        {
+          "id": "chat_01",
+          "category": "normal_chat",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0043,
+          "pass": true
+        },
+        {
+          "id": "chat_02",
+          "category": "normal_chat",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0185,
+          "pass": true
+        },
+        {
+          "id": "chat_03",
+          "category": "normal_chat",
+          "expect": "MEDIUM-",
+          "got": "MEDIUM",
+          "score": 0.2954,
+          "pass": true
+        },
+        {
+          "id": "chat_04",
+          "category": "normal_chat",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.0078,
+          "pass": true
+        },
+        {
+          "id": "amb_01",
+          "category": "ambiguous",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.0909,
+          "pass": true
+        },
+        {
+          "id": "amb_02",
+          "category": "ambiguous",
+          "expect": "MEDIUM-",
+          "got": "LOW",
+          "score": 0.1088,
+          "pass": true
+        },
+        {
+          "id": "mistake_02",
+          "category": "no_link_scam",
+          "expect": "MEDIUM+",
+          "got": "HIGH",
+          "score": 0.9958,
+          "pass": true
+        },
+        {
+          "id": "mistake_03",
+          "category": "benign_scary",
+          "expect": "LOW",
+          "got": "LOW",
+          "score": 0.2123,
+          "pass": true
+        }
+      ]
+    },
+    "url_test": {
+      "n": 33373,
+      "note": "hostname only; PhiUSIIL legit URLs are homepages, so full-URL models would leak",
+      "systems": {
+        "hgb_lexical": {
+          "pr_auc": 0.8784,
+          "roc_auc": 0.8674,
+          "recall_at_fpr_1pct": 0.6244
+        },
+        "char_ngram_lr": {
+          "pr_auc": 0.9106,
+          "roc_auc": 0.9157,
+          "recall_at_fpr_1pct": 0.5951
+        },
+        "average": {
+          "pr_auc": 0.9198,
+          "roc_auc": 0.9203,
+          "recall_at_fpr_1pct": 0.67
+        }
+      },
+      "india_hosts": {
+        "n_scam_hosts": 90,
+        "n_official_hosts": 58,
+        "without_allowlist": {
+          "pr_auc": 0.9938,
+          "roc_auc": 0.9898,
+          "recall_at_fpr_1pct": 0.8111
+        },
+        "official_flagged_rate_without_allowlist": 0.1724,
+        "scam_hosts_flagged_rate": 0.9889
+      }
+    },
+    "template_folds": {
+      "n_folds": 5,
+      "note": "TF-IDF model + out-of-fold ensemble retrained per fold; neural and link models reused (neural model not part of the fold ensemble)",
+      "recall_high": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "fpr_high": {
+        "mean": 0.0145,
+        "min": 0.0035,
+        "max": 0.032
+      },
+      "pr_auc": {
+        "mean": 0.9981,
+        "min": 0.9963,
+        "max": 1.0
+      },
+      "legit_transactional_fpr_high": {
+        "mean": 0.0123,
+        "min": 0.0,
+        "max": 0.0229
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "n_test": 489,
+          "recall_high": 1.0,
+          "fpr_high": 0.0073,
+          "legit_transactional_fpr_high": 0.0153,
+          "pr_auc": 0.998
+        },
+        {
+          "fold": 2,
+          "n_test": 468,
+          "recall_high": 1.0,
+          "fpr_high": 0.0262,
+          "legit_transactional_fpr_high": 0.0157,
+          "pr_auc": 0.9963
+        },
+        {
+          "fold": 3,
+          "n_test": 491,
+          "recall_high": 1.0,
+          "fpr_high": 0.0035,
+          "legit_transactional_fpr_high": 0.0,
+          "pr_auc": 1.0
+        },
+        {
+          "fold": 4,
+          "n_test": 482,
+          "recall_high": 1.0,
+          "fpr_high": 0.0035,
+          "legit_transactional_fpr_high": 0.0076,
+          "pr_auc": 0.9985
+        },
+        {
+          "fold": 5,
+          "n_test": 446,
+          "recall_high": 1.0,
+          "fpr_high": 0.032,
+          "legit_transactional_fpr_high": 0.0229,
+          "pr_auc": 0.9979
+        }
+      ]
+    },
+    "test_cross": {
+      "n": 945,
+      "note": "text models retrained without any Mendeley data",
+      "systems": {
+        "B0_rules_only": {
+          "pr_auc": 0.6163,
+          "roc_auc": 0.6604,
+          "recall_at_fpr_1pct": 0.2993
+        },
+        "B1_naive_bayes": {
+          "pr_auc": 0.9909,
+          "roc_auc": 0.9923,
+          "recall_at_fpr_1pct": 0.8812
+        },
+        "text_tfidf_lr": {
+          "pr_auc": 0.9883,
+          "roc_auc": 0.9954,
+          "recall_at_fpr_1pct": 0.981
+        }
+      }
+    }
+  }
+}

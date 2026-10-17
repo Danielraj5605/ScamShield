@@ -1,0 +1,43 @@
+{
+  "platform": {
+    "arch": "s390x",
+    "byteorder": "big",
+    "system": "Linux",
+    "platform": "Linux-6.8.0-147-generic-s390x-with-glibc2.39",
+    "hostname": "scamshield",
+    "python": "3.12.3",
+    "cpus": 3,
+    "mem_gib": 7.82,
+    "features_has_nnpa": true,
+    "machine_type": "9175",
+    "libs": {
+      "numpy": "1.26.4",
+      "pandas": "2.1.4+dfsg",
+      "sklearn": "1.4.1.post1",
+      "torch": "2.14.1+cpu",
+      "flask": "3.0.2"
+    }
+  },
+  "model_version": "ss-20261017-105456",
+  "neural_model": true,
+  "in_process_single": {
+    "n": 2000,
+    "p50_ms": 2.682,
+    "p95_ms": 8.451,
+    "p99_ms": 21.362,
+    "mean_ms": 3.974,
+    "throughput_msgs_per_s": 251.6
+  },
+  "in_process_with_word_explanations": {
+    "n": 300,
+    "p50_ms": 4.087,
+    "p95_ms": 88.407,
+    "p99_ms": 164.786,
+    "mean_ms": 18.962,
+    "throughput_msgs_per_s": 52.7
+  },
+  "batch_256": {
+    "n": 2000,
+    "throughput_msgs_per_s": 410.0
+  }
+}

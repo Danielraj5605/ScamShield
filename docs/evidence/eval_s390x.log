@@ -1,0 +1,7 @@
+[eval] test_in     n=916   PR-AUC=0.9869 recall@1%FPR=0.9686 recall_high=0.9686 fpr_high=0.0053
+[eval] test_india  n=461   PR-AUC=0.997 recall@1%FPR=0.9059 recall_high=1.0 fpr_high=0.0656
+[eval] test_adv    n=36    pass_rate=0.9444
+[eval] url_test    n=33373 avg PR-AUC=0.9198
+[eval] template_folds x5: recall_high {'mean': 1.0, 'min': 1.0, 'max': 1.0} fpr_high {'mean': 0.0145, 'min': 0.0035, 'max': 0.032} legit_tx_fpr {'mean': 0.0123, 'min': 0.0, 'max': 0.0229}
+[eval] test_cross  n=945   LR PR-AUC=0.9883
+[eval] wrote reports/metrics_s390x.json and .md

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "obf_01",
+    "category": "obfuscation",
+    "expect": "HIGH",
+    "text": "Dear user share the 0TP sent to ur mobile to stop blocking of your account"
+  },
+  {
+    "id": "obf_02",
+    "category": "obfuscation",
+    "expect": "HIGH",
+    "text": "SBI: Your YONO a/c will be BLOCKED today. Update PAN at hxxps://sbi-yono-kyc[.]top/verify"
+  },
+  {
+    "id": "obf_03",
+    "category": "obfuscation",
+    "expect": "MEDIUM+",
+    "text": "Urgent!! Ur KYC is p e n d i n g. Click bit.ly/kyc-upd8 now"
+  },
+  {
+    "id": "obf_04",
+    "category": "obfuscation",
+    "expect": "HIGH",
+    "text": "Your HDFC account is suspended. Verify at www.hdfcbnak.com/login immediately"
+  },
+  {
+    "id": "obf_05",
+    "category": "obfuscation",
+    "expect": "MEDIUM+",
+    "text": "Сongratulations! You wоn a Flipkart gift card of Rs 50,000. Claim: flipkart-reward.xyz"
+  },
+  {
+    "id": "obf_06",
+    "category": "obfuscation",
+    "expect": "HIGH",
+    "text": "Pls send the O.T.P you received, it was sent to you by mistake for my account"
+  },
+  {
+    "id": "obf_07",
+    "category": "obfuscation",
+    "expect": "MEDIUM+",
+    "text": "Dear customer your electricity will be d1sconnected tonight. Contact officer 9XXXXX7712"
+  },
+  {
+    "id": "obf_08",
+    "category": "obfuscation",
+    "expect": "HIGH",
+    "text": "Install AnyDesk app from playstore and share the 9 digit code with our technician to receive your refund"
+  },
+  {
+    "id": "ben_01",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "Rs 4,560.00 debited from A/c XX9921 on 14-Oct-26 to ZOMATO. Avl Bal Rs 22,315. Not you? Call 1800-XXX-XXXX -Axis Bank"
+  },
+  {
+    "id": "ben_02",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "Your card ending 4410 has been blocked as per your request. A new card will be sent to your registered address. -ICICI Bank"
+  },
+  {
+    "id": "ben_03",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "382910 is your OTP to complete the payment of Rs 899 on Myntra. OTP valid for 5 mins. Do not share this OTP with anyone."
+  },
+  {
+    "id": "ben_04",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "Your Aadhaar was used for authentication on 15-Oct-26 at 11:02. If not done by you, contact UIDAI on 1947."
+  },
+  {
+    "id": "ben_05",
+    "category": "benign_scary",
+    "expect": "MEDIUM-",
+    "text": "Your electricity bill of Rs 1,240 is due on 20-Oct-26. Please pay on time to avoid late fee. -BESCOM"
+  },
+  {
+    "id": "ben_06",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "Your Flipkart order is out for delivery. Share OTP 5521 with the delivery agent only at the time of delivery."
+  },
+  {
+    "id": "ben_07",
+    "category": "benign_scary",
+    "expect": "MEDIUM-",
+    "text": "Your KYC has been successfully updated. Thank you for banking with Kotak."
+  },
+  {
+    "id": "ben_08",
+    "category": "benign_scary",
+    "expect": "MEDIUM-",
+    "text": "Reminder: your car insurance expires in 7 days. Renew now to stay protected."
+  },
+  {
+    "id": "ben_09",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "Payment of Rs 650 to Swiggy via UPI was successful. UPI Ref No 6612 8810 2231."
+  },
+  {
+    "id": "ben_10",
+    "category": "benign_scary",
+    "expect": "MEDIUM-",
+    "text": "Dear customer, never share your OTP, PIN or CVV with anyone. The bank never asks for these details. -PNB"
+  },
+  {
+    "id": "nolink_01",
+    "category": "no_link_scam",
+    "expect": "HIGH",
+    "text": "This is CBI. Your Aadhaar is linked to a drugs parcel. You are under digital arrest, stay on the video call."
+  },
+  {
+    "id": "nolink_02",
+    "category": "no_link_scam",
+    "expect": "MEDIUM+",
+    "text": "Hi mom my phone fell in water, this is my new number. Need Rs 15000 urgently for exam fees, please send now"
+  },
+  {
+    "id": "nolink_03",
+    "category": "no_link_scam",
+    "expect": "HIGH",
+    "text": "You will receive a request of Rs 5000 on GPay as cashback. Enter your UPI PIN to receive the money."
+  },
+  {
+    "id": "nolink_04",
+    "category": "no_link_scam",
+    "expect": "MEDIUM+",
+    "text": "Congratulations, your number won 25 lakh in KBC lottery. Call manager Rana Pratap on WhatsApp 9XXXXX0098"
+  },
+  {
+    "id": "nolink_05",
+    "category": "no_link_scam",
+    "expect": "HIGH",
+    "text": "Customs officer here. Your parcel has illegal items and an FIR is filed. Pay the fine to avoid arrest."
+  },
+  {
+    "id": "nolink_06",
+    "category": "no_link_scam",
+    "expect": "MEDIUM+",
+    "text": "Instant personal loan approved without CIBIL. Pay processing fee Rs 999 to get Rs 2 lakh in 10 minutes"
+  },
+  {
+    "id": "polite_01",
+    "category": "polite_scam",
+    "expect": "MEDIUM+",
+    "text": "Good afternoon sir, we are pleased to inform you that you have been shortlisted for a remote assistant role with flexible hours and attractive daily earnings. Kindly reply to know more."
+  },
+  {
+    "id": "polite_02",
+    "category": "polite_scam",
+    "expect": "MEDIUM+",
+    "text": "Dear valued customer, as part of our annual verification, kindly confirm your card details using the secure form at verify-cardholder.info. Thank you for your cooperation."
+  },
+  {
+    "id": "polite_03",
+    "category": "polite_scam",
+    "expect": "MEDIUM+",
+    "text": "Hello, I am Priya from an investment advisory. Our members earn steady 10% monthly returns. May I add you to our WhatsApp group?"
+  },
+  {
+    "id": "polite_04",
+    "category": "polite_scam",
+    "expect": "MEDIUM+",
+    "text": "Respected customer, your reward points of Rs 7,250 are expiring today. Redeem them at sbi-rewardz.co before midnight."
+  },
+  {
+    "id": "chat_01",
+    "category": "normal_chat",
+    "expect": "LOW",
+    "text": "Are we still meeting at the cafe at 6? I'll bring the notes"
+  },
+  {
+    "id": "chat_02",
+    "category": "normal_chat",
+    "expect": "LOW",
+    "text": "Can you send me the photos from the wedding? Mom wants them"
+  },
+  {
+    "id": "chat_03",
+    "category": "normal_chat",
+    "expect": "MEDIUM-",
+    "text": "Please send me 500 on GPay, I forgot my wallet. Will return tonight - Rohan"
+  },
+  {
+    "id": "chat_04",
+    "category": "normal_chat",
+    "expect": "LOW",
+    "text": "Happy Diwali to you and your family! Wishing you joy and prosperity"
+  },
+  {
+    "id": "amb_01",
+    "category": "ambiguous",
+    "expect": "MEDIUM+",
+    "text": "Send me the OTP you just got, I'm trying to log in to our Netflix account"
+  },
+  {
+    "id": "amb_02",
+    "category": "ambiguous",
+    "expect": "MEDIUM-",
+    "text": "Flat 50% off on all shoes this weekend only at Metro Shoes. Visit your nearest store."
+  },
+  {
+    "id": "mistake_02",
+    "category": "no_link_scam",
+    "expect": "MEDIUM+",
+    "text": "Good evening, I accidentally transferred Rs 12,500 to your account. Kindly return the amount to my UPI id raj77@ybl"
+  },
+  {
+    "id": "mistake_03",
+    "category": "benign_scary",
+    "expect": "LOW",
+    "text": "Sorry, I attached the wrong file by mistake. Please ignore and delete it, I will resend the correct one"
+  }
+]

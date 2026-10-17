@@ -1,0 +1,21 @@
+# Public URL-shortener hosts (registered domains). Hiding the destination is a scam signal.
+bit.ly
+bit.do
+tinyurl.com
+t.co
+goo.gl
+is.gd
+cutt.ly
+ow.ly
+rb.gy
+shorturl.at
+tiny.cc
+rebrand.ly
+s.id
+v.gd
+t.ly
+shorte.st
+adf.ly
+smsg.io
+qr.ae
+buff.ly

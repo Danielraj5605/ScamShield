@@ -1,0 +1,10 @@
+# Core runtime (all have s390x builds in Ubuntu/RHEL repositories; see scripts/setup_linuxone.sh)
+numpy>=1.21
+pandas>=1.3
+scikit-learn>=1.2
+joblib>=1.1
+flask>=2.0
+# Optional: the neural character-CNN. ScamShield runs without it (python -m scamshield train --no-cnn).
+# torch>=2.0
+# Development
+pytest>=7.0

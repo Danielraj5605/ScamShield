@@ -1,0 +1,894 @@
+{
+  "_about": "Synthetic Indian-context messages written by the ScamShield team in our own words, modelled on public cyber-safety advisories. All numbers are masked or random, all scam domains are invented. Every generated row is labelled source=synthetic.",
+  "scam": [
+    {
+      "id": "kyc_01",
+      "type": "kyc",
+      "text": "Dear {bank} customer, your KYC is pending and your account will be blocked today. Update KYC now: {fake_link}"
+    },
+    {
+      "id": "kyc_02",
+      "type": "kyc",
+      "text": "{bank} ALERT: Your net banking will be suspended within 24 hours due to incomplete PAN details. Click {fake_link} to update."
+    },
+    {
+      "id": "kyc_03",
+      "type": "kyc",
+      "text": "Dear user your {bank} account has been deactivated. Please update your PAN card immediately {fake_link}"
+    },
+    {
+      "id": "kyc_05",
+      "type": "kyc",
+      "text": "Your SIM card will be blocked within 24 hours as your KYC is not verified by {telco}. Call our executive on {phone}"
+    },
+    {
+      "id": "kyc_06",
+      "type": "kyc",
+      "text": "Your {bank} account is under review due to suspicious activity. Verify your identity at {fake_link} within 24 hours"
+    },
+    {
+      "id": "parcel_01",
+      "type": "parcel",
+      "text": "{courier}: Your package is on hold due to an incomplete address. Update your address and pay Rs {small_amt} redelivery fee: {fake_link}"
+    },
+    {
+      "id": "parcel_02",
+      "type": "parcel",
+      "text": "Your shipment {order} could not be delivered. Pay customs charge of Rs {small_amt} within 12 hours: {fake_link}"
+    },
+    {
+      "id": "parcel_03",
+      "type": "parcel",
+      "text": "Dear customer, your parcel from {company} has been held at our warehouse. Confirm delivery details here {fake_link}"
+    },
+    {
+      "id": "parcel_04",
+      "type": "parcel",
+      "text": "India Post: The package arrived at the warehouse but could not be delivered due to incomplete address information. Please update here: {fake_link}"
+    },
+    {
+      "id": "job_01",
+      "type": "job",
+      "text": "Hi, I am {name} from {company} HR. Part time job available, earn Rs {big_amt} per day from home. WhatsApp me at {phone}"
+    },
+    {
+      "id": "job_02",
+      "type": "job",
+      "text": "Work from home opportunity! Like YouTube videos and earn Rs 150 per like. Daily payout. Join: {fake_link}"
+    },
+    {
+      "id": "job_03",
+      "type": "job",
+      "text": "Congratulations! You are selected for a part-time job. Salary Rs {big_amt}/day. Pay registration fee Rs {small_amt} to start."
+    },
+    {
+      "id": "job_05",
+      "type": "job",
+      "text": "Hello! We are hiring for hotel review tasks. Rate hotels on Google and earn commission of Rs {amt} daily. Reply YES to join."
+    },
+    {
+      "id": "utility_01",
+      "type": "utility",
+      "text": "Dear consumer, your electricity power will be disconnected tonight at {time} because your previous month bill was not updated. Please immediately call our electricity officer {phone}"
+    },
+    {
+      "id": "utility_02",
+      "type": "utility",
+      "text": "{board}: Your electricity connection will be cut today at {time}. Update your bill payment immediately at {fake_link}"
+    },
+    {
+      "id": "utility_04",
+      "type": "utility",
+      "text": "Dear customer your {telco} number will be suspended in 2 hours. To avoid disconnection call {phone}"
+    },
+    {
+      "id": "imp_01",
+      "type": "impersonation",
+      "text": "This is the {city} Cyber Crime Police. A case has been registered against your Aadhaar for money laundering. Join the video call immediately or face arrest."
+    },
+    {
+      "id": "imp_02",
+      "type": "impersonation",
+      "text": "Customs Department: A parcel in your name containing illegal drugs has been seized. Call officer {name} at {phone} to avoid FIR."
+    },
+    {
+      "id": "imp_03",
+      "type": "impersonation",
+      "text": "TRAI notice: your mobile number will be blocked within 2 hours due to illegal activity. Press 9 to speak to the officer."
+    },
+    {
+      "id": "imp_04",
+      "type": "impersonation",
+      "text": "CBI officer here. You are under digital arrest. Do not disconnect the call and transfer Rs {big_amt} for verification."
+    },
+    {
+      "id": "prize_01",
+      "type": "prize",
+      "text": "Congratulations! Your mobile number has won Rs {big_amt} in the {company} lucky draw. Claim your prize now: {fake_link}"
+    },
+    {
+      "id": "prize_02",
+      "type": "prize",
+      "text": "You have won a {company} gift card worth Rs {big_amt}. Click {fake_link} to claim before it expires today."
+    },
+    {
+      "id": "prize_03",
+      "type": "prize",
+      "text": "KBC Lottery: Your number is selected for Rs 25,00,000 prize. Contact manager {name} on WhatsApp {phone}"
+    },
+    {
+      "id": "upi_01",
+      "type": "refund_upi",
+      "text": "You have received a cashback of Rs {amt} from {company}. Enter your UPI PIN to receive the amount in your account."
+    },
+    {
+      "id": "upi_02",
+      "type": "refund_upi",
+      "text": "Rs {amt} refund is pending for your account. Approve the collect request from {upi} to receive your refund."
+    },
+    {
+      "id": "upi_03",
+      "type": "refund_upi",
+      "text": "Income tax refund of Rs {amt} has been approved. Verify your account details at {fake_link} to receive it."
+    },
+    {
+      "id": "upi_04",
+      "type": "refund_upi",
+      "text": "Hi, I sent Rs {amt} to your number by mistake. Please return it, I have sent a request on PhonePe, just accept it."
+    },
+    {
+      "id": "loan_01",
+      "type": "loan",
+      "text": "Pre-approved instant loan of Rs {big_amt} without CIBIL check. Pay processing fee of Rs {small_amt} and get money in 10 minutes: {fake_link}"
+    },
+    {
+      "id": "loan_02",
+      "type": "loan",
+      "text": "Congratulations {name}! Your personal loan of Rs {big_amt} is sanctioned. Download our app to get the amount: {fake_link}"
+    },
+    {
+      "id": "loan_03",
+      "type": "loan",
+      "text": "Easy loan in 5 minutes, no documents needed. Apply now {fake_link}"
+    },
+    {
+      "id": "inv_01",
+      "type": "investment",
+      "text": "Join our stock trading group and earn 5% daily guaranteed returns. Limited seats, join now: {fake_link}"
+    },
+    {
+      "id": "inv_02",
+      "type": "investment",
+      "text": "Double your money in 30 days with bitcoin investment. Guaranteed profit. WhatsApp {phone}"
+    },
+    {
+      "id": "inv_03",
+      "type": "investment",
+      "text": "IPO allotment guaranteed with VIP trading tips. Invest Rs {big_amt} today and get {pct}% returns monthly."
+    },
+    {
+      "id": "otp_01",
+      "type": "otp_theft",
+      "text": "Dear customer, to stop the unauthorised transaction of Rs {amt} on your card, please share the OTP sent to your mobile with our executive."
+    },
+    {
+      "id": "otp_02",
+      "type": "otp_theft",
+      "text": "This is {bank} customer care. Your reward points worth Rs {amt} will expire today. Tell me the OTP to redeem them."
+    },
+    {
+      "id": "otp_03",
+      "type": "otp_theft",
+      "text": "Your {bank} credit card limit has been increased. Reply with your card number, expiry date and CVV to activate."
+    },
+    {
+      "id": "remote_01",
+      "type": "remote_access",
+      "text": "To fix your account issue please install AnyDesk from Play Store and share the code with our support executive."
+    },
+    {
+      "id": "remote_02",
+      "type": "remote_access",
+      "text": "Your {bank} app needs an update. Download the new {bank} APK file from {fake_link} to continue banking."
+    },
+    {
+      "id": "remote_03",
+      "type": "remote_access",
+      "text": "Dear user, your electricity bill update requires the Quick Support app. Install it and share the screen with our officer."
+    },
+    {
+      "id": "alert_01",
+      "type": "fake_alert",
+      "text": "Rs {amt} has been debited from your account for an unknown purchase. If not done by you, call immediately {phone}"
+    },
+    {
+      "id": "alert_02",
+      "type": "fake_alert",
+      "text": "Suspicious login detected on your {bank} account from a new device. Secure your account now: {fake_link}"
+    },
+    {
+      "id": "alert_03",
+      "type": "fake_alert",
+      "text": "Dear customer, Rs {big_amt} will be debited from your account for an Amazon Prime auto-renewal. To cancel, call {phone} immediately."
+    },
+    {
+      "id": "alert_04",
+      "type": "fake_alert",
+      "text": "ALERT: Your {bank} debit card is blocked due to suspicious activity. Call customer care {phone} to unblock."
+    },
+    {
+      "id": "alert_05",
+      "type": "fake_alert",
+      "text": "Your Netflix subscription has expired. Update your payment details at {fake_link} to avoid suspension."
+    },
+    {
+      "id": "kyc_07",
+      "type": "kyc",
+      "text": "Your PAN card is blocked and your account will be closed. Update PAN at {fake_link}"
+    },
+    {
+      "id": "kyc_08",
+      "type": "kyc",
+      "text": "Your FASTag KYC is pending. Update now to avoid blacklisting: {fake_link}"
+    },
+    {
+      "id": "imp_05",
+      "type": "impersonation",
+      "text": "Hi mom, my phone is broken and this is my new number. Please send Rs {big_amt} urgently, I will explain later."
+    },
+    {
+      "id": "utility_05",
+      "type": "utility",
+      "text": "Your electricity bill is unpaid. Pay Rs {small_amt} now through {fake_link} or supply will be stopped tonight."
+    },
+    {
+      "id": "prize_04",
+      "type": "prize",
+      "text": "Congrats! You are eligible for a government scheme subsidy of Rs {big_amt}. Register at {fake_link}"
+    },
+    {
+      "id": "parcel_05",
+      "type": "parcel",
+      "text": "{courier}: Customs duty of Rs {small_amt} pending for your international parcel. Pay at {fake_link}"
+    },
+    {
+      "id": "otp_05",
+      "type": "otp_theft",
+      "text": "We noticed a login to your WhatsApp from a new device. Send the 6-digit code you received to this number to secure your account."
+    },
+    {
+      "id": "otp_06",
+      "type": "otp_theft",
+      "text": "Your SIM will be deactivated today due to pending e-KYC. Reply with your Aadhaar number and the OTP you receive."
+    },
+    {
+      "id": "upi_05",
+      "type": "refund_upi",
+      "text": "Dear user, your EPF claim of Rs {big_amt} is approved. Pay processing charges of Rs {small_amt} at {fake_link}"
+    },
+    {
+      "id": "inv_04",
+      "type": "investment",
+      "text": "Get guaranteed 30% monthly profit with our AI trading bot. Join our Telegram group now: {fake_link}"
+    },
+    {
+      "id": "job_06",
+      "type": "job",
+      "text": "Job offer from {company}: data entry work, Rs {big_amt} per week. Pay a refundable security deposit of Rs {small_amt} to confirm."
+    },
+    {
+      "id": "loan_04",
+      "type": "loan",
+      "text": "Your loan EMI is overdue. Pay immediately at {fake_link} or legal action will be taken today."
+    },
+    {
+      "id": "upi_06",
+      "type": "refund_upi",
+      "text": "Sorry, I transferred Rs {amt} to your account wrongly. Kindly send it back to my number {phone}, I will show you the screenshot."
+    },
+    {
+      "id": "upi_07",
+      "type": "refund_upi",
+      "text": "Hello, my Rs {amt} came to your account by mistake. Please refund it to this UPI {upi} urgently."
+    }
+  ],
+  "legit": [
+    {
+      "id": "lotp_01",
+      "type": "otp",
+      "text": "{otp} is your OTP for txn of Rs {amt} at {merchant} on your {bank} card ending {last4}. Valid for 10 mins. Do not share it with anyone."
+    },
+    {
+      "id": "lotp_02",
+      "type": "otp",
+      "text": "{otp} is the OTP to login to your {company} account. Do not share this code with anyone, including {company} employees."
+    },
+    {
+      "id": "lotp_03",
+      "type": "otp",
+      "text": "Your OTP for {telco} recharge of Rs {small_amt} is {otp}. Never share your OTP with anyone. -{telco}"
+    },
+    {
+      "id": "lotp_04",
+      "type": "otp",
+      "text": "Dear customer, OTP for your transaction is {otp}. {bank} never asks for your OTP, PIN or password. Do not share."
+    },
+    {
+      "id": "lotp_05",
+      "type": "otp",
+      "text": "{otp} is your verification code for {company}. Don't share it with anyone."
+    },
+    {
+      "id": "lotp_06",
+      "type": "otp",
+      "text": "Use OTP {otp} to verify your mobile number on IRCTC. It is valid for 10 minutes. Please do not share this OTP."
+    },
+    {
+      "id": "lotp_08",
+      "type": "otp",
+      "text": "Delivery partner {name} will arrive with your {company} order shortly. Share OTP {otp} with the delivery agent only at the time of delivery."
+    },
+    {
+      "id": "ltxn_01",
+      "type": "debit",
+      "text": "Rs {amt} debited from A/c XX{last4} on {date} to {merchant}. Avl Bal Rs {big_amt}. Not you? Call {tollfree} -{bank}"
+    },
+    {
+      "id": "ltxn_02",
+      "type": "credit",
+      "text": "Your A/c XX{last4} is credited with Rs {amt} on {date} by UPI ref {code}. -{bank}"
+    },
+    {
+      "id": "ltxn_03",
+      "type": "debit",
+      "text": "Rs {amt} spent on your {bank} Credit Card XX{last4} at {merchant} on {date}. If not done by you, block the card via the official {bank} app."
+    },
+    {
+      "id": "ltxn_04",
+      "type": "debit",
+      "text": "INR {amt} withdrawn from ATM using card XX{last4} on {date}. Avl bal INR {big_amt}. -{bank}"
+    },
+    {
+      "id": "ltxn_05",
+      "type": "credit",
+      "text": "Your salary of Rs {big_amt} has been credited to A/c XX{last4} on {date}. -{bank}"
+    },
+    {
+      "id": "ltxn_06",
+      "type": "debit",
+      "text": "Payment of Rs {amt} to {merchant} via UPI was successful. UPI Ref No {code}."
+    },
+    {
+      "id": "ltxn_08",
+      "type": "statement",
+      "text": "Your {bank} Credit Card statement is generated. Total due Rs {amt}, minimum due Rs {small_amt}, due date {date}. Pay via the {bank} app."
+    },
+    {
+      "id": "ltxn_09",
+      "type": "statement",
+      "text": "Your EMI of Rs {amt} for loan account XX{last4} will be auto-debited on {date}. Please maintain sufficient balance. -{bank}"
+    },
+    {
+      "id": "ltxn_10",
+      "type": "service",
+      "text": "Your card XX{last4} has been blocked as per your request on {date}. A new card will be dispatched to your registered address. -{bank}"
+    },
+    {
+      "id": "ltxn_11",
+      "type": "service",
+      "text": "Your KYC has been successfully updated. Thank you for banking with {bank}."
+    },
+    {
+      "id": "ldel_01",
+      "type": "delivery",
+      "text": "Your {company} order {order} is out for delivery today. Track: {legit_link}"
+    },
+    {
+      "id": "ldel_02",
+      "type": "delivery",
+      "text": "{courier}: Shipment {order} delivered on {date}. Thank you for choosing {courier}."
+    },
+    {
+      "id": "ldel_03",
+      "type": "delivery",
+      "text": "Your order {order} has been shipped and will arrive by {date}. -{company}"
+    },
+    {
+      "id": "ldel_04",
+      "type": "delivery",
+      "text": "Your return request for order {order} is approved. Refund of Rs {amt} will be credited to your original payment method in 5-7 days."
+    },
+    {
+      "id": "lbill_01",
+      "type": "bill",
+      "text": "Your electricity bill of Rs {amt} for consumer no {code} is due on {date}. Pay via the official {board} website or app."
+    },
+    {
+      "id": "lbill_02",
+      "type": "bill",
+      "text": "{telco}: Your prepaid plan expires on {date}. Recharge via the {telco} app to continue enjoying services."
+    },
+    {
+      "id": "lbill_03",
+      "type": "bill",
+      "text": "Payment of Rs {amt} received for your {board} electricity bill. Thank you."
+    },
+    {
+      "id": "lbill_04",
+      "type": "bill",
+      "text": "Your postpaid bill of Rs {amt} for your {telco} number is generated. Due date {date}."
+    },
+    {
+      "id": "lbill_05",
+      "type": "bill",
+      "text": "Reminder: Your LIC premium of Rs {amt} is due on {date}. Pay via the LIC website, app or nearest branch."
+    },
+    {
+      "id": "lbill_06",
+      "type": "bill",
+      "text": "Your FASTag balance is low. Recharge via your bank app to avoid penalty at toll plazas."
+    },
+    {
+      "id": "lgov_01",
+      "type": "gov",
+      "text": "Your Aadhaar was used for authentication on {date} at {time}. If not done by you, contact UIDAI on 1947."
+    },
+    {
+      "id": "lgov_02",
+      "type": "gov",
+      "text": "Your income tax return for AY 2026-27 has been processed. Check details at {legit_link}"
+    },
+    {
+      "id": "lgov_03",
+      "type": "gov",
+      "text": "Your PAN-Aadhaar link status: Linked successfully. -Income Tax Department"
+    },
+    {
+      "id": "lgov_04",
+      "type": "gov",
+      "text": "Your PNR {code}: Train 12627 on {date}, Coach S4 Berth 32 confirmed. -IRCTC"
+    },
+    {
+      "id": "lper_01",
+      "type": "personal",
+      "text": "Your appointment with Dr. {name} is confirmed for {date} at {time}. Reply C to cancel. -{city} Hospital"
+    },
+    {
+      "id": "lper_02",
+      "type": "personal",
+      "text": "Dear {name}, your class is rescheduled to {time} tomorrow. -{city} Coaching Centre"
+    },
+    {
+      "id": "lper_03",
+      "type": "personal",
+      "text": "Hi {name}, I'll reach the station by {time}. Can you pick me up?"
+    },
+    {
+      "id": "lper_04",
+      "type": "personal",
+      "text": "Maa, I reached {city} safely. Will call you at night."
+    },
+    {
+      "id": "lper_05",
+      "type": "personal",
+      "text": "Beta, please send me Rs {small_amt} on UPI for the vegetables. I'll return it tomorrow."
+    },
+    {
+      "id": "lper_06",
+      "type": "personal",
+      "text": "Reminder from {city} Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning."
+    },
+    {
+      "id": "lpromo_01",
+      "type": "promo",
+      "text": "Flat 40% off on your next order at {merchant}! Use code SAVE40. Offer valid till {date}. T&C apply."
+    },
+    {
+      "id": "ltxn_12",
+      "type": "debit",
+      "text": "Dear Customer, Rs.{amt} debited from your A/c no. XX{last4} on {date} for UPI txn to {merchant}. Ref no {code}. If not done by you, report via the {bank} app. -{bank}"
+    },
+    {
+      "id": "ltxn_13",
+      "type": "debit",
+      "text": "A/c XX{last4} debited by Rs.{amt} on {date}; trf to {name}. Avl Bal Rs.{big_amt}. Not you? Report on the {bank} app. -{bank}"
+    },
+    {
+      "id": "ltxn_14",
+      "type": "debit",
+      "text": "ALERT: You've spent Rs.{amt} on {bank} Debit Card xx{last4} at {merchant} on {date}. Avl bal: Rs.{big_amt}. Not you? Call {tollfree}."
+    },
+    {
+      "id": "ltxn_15",
+      "type": "debit",
+      "text": "Txn of INR {amt} done on Card ending {last4} at {merchant} on {date}. Available limit INR {big_amt}. -{bank}"
+    },
+    {
+      "id": "ltxn_16",
+      "type": "credit",
+      "text": "Rs {amt} credited to your A/c XX{last4} on {date} from {name} via IMPS. Ref {code}. -{bank}"
+    },
+    {
+      "id": "ltxn_17",
+      "type": "credit",
+      "text": "Your NEFT of Rs {amt} to {name} has been successfully processed on {date}. UTR {code}. -{bank}"
+    },
+    {
+      "id": "ltxn_18",
+      "type": "service",
+      "text": "Dear customer, your cheque for Rs {amt} has been cleared on {date}. -{bank}"
+    },
+    {
+      "id": "ltxn_19",
+      "type": "service",
+      "text": "Your FD of Rs {big_amt} has been renewed on {date}. Check the {bank} app for details."
+    },
+    {
+      "id": "ltxn_20",
+      "type": "debit",
+      "text": "Your monthly SIP of Rs {amt} has been processed on {date}. -{bank} Mutual Fund"
+    },
+    {
+      "id": "ltxn_21",
+      "type": "credit",
+      "text": "Rs {amt} received in your Paytm wallet from {name}."
+    },
+    {
+      "id": "ltxn_22",
+      "type": "debit",
+      "text": "You paid Rs {amt} to {merchant} using PhonePe UPI. Transaction ID {code}."
+    },
+    {
+      "id": "ltxn_23",
+      "type": "debit",
+      "text": "Your Google Pay payment of Rs {amt} to {name} was successful."
+    },
+    {
+      "id": "ltxn_24",
+      "type": "service",
+      "text": "{bank}: Your new debit card ending {last4} has been dispatched via {courier}. Tracking no {code}."
+    },
+    {
+      "id": "ltxn_25",
+      "type": "service",
+      "text": "Your {bank} net banking password was changed on {date} at {time}. If this was not you, contact the bank through its official website."
+    },
+    {
+      "id": "ltxn_26",
+      "type": "service",
+      "text": "Login to {bank} mobile banking on {date} at {time}. Not you? Call the number on the back of your card."
+    },
+    {
+      "id": "ltxn_27",
+      "type": "credit",
+      "text": "Your credit card payment of Rs {amt} has been received. Thank you. -{bank}"
+    },
+    {
+      "id": "ltxn_28",
+      "type": "debit",
+      "text": "Paytm: Rs {amt} sent to {name} successfully. UPI Ref {code}."
+    },
+    {
+      "id": "lbill_07",
+      "type": "bill",
+      "text": "{telco}: Recharge of Rs {small_amt} successful for your number. Validity till {date}."
+    },
+    {
+      "id": "lbill_08",
+      "type": "bill",
+      "text": "Dear customer, your {telco} data pack is 90% used. Recharge via the {telco} app."
+    },
+    {
+      "id": "lbill_09",
+      "type": "bill",
+      "text": "Your vehicle insurance policy expires on {date}. Renew on the insurer's official website or app."
+    },
+    {
+      "id": "lbill_10",
+      "type": "bill",
+      "text": "Your gas cylinder booking no {code} is confirmed. Delivery expected by {date}."
+    },
+    {
+      "id": "ldel_05",
+      "type": "delivery",
+      "text": "Your Swiggy order from {merchant} is on the way! Delivery partner {name} is nearby."
+    },
+    {
+      "id": "ldel_06",
+      "type": "delivery",
+      "text": "Your Uber ride with {name} is arriving in 3 minutes. OTP for the ride is {otp}."
+    },
+    {
+      "id": "ldel_07",
+      "type": "delivery",
+      "text": "Your {company} refund of Rs {amt} has been processed and will reflect in 3-5 business days."
+    },
+    {
+      "id": "lgov_05",
+      "type": "gov",
+      "text": "Your IRCTC booking is confirmed. PNR {code}, journey date {date}. Have a safe journey."
+    },
+    {
+      "id": "lgov_06",
+      "type": "gov",
+      "text": "Your EPF contribution of Rs {amt} for Sep 2026 has been credited. -EPFO"
+    },
+    {
+      "id": "lgov_07",
+      "type": "gov",
+      "text": "Your Aadhaar update request {code} has been successfully completed. -UIDAI"
+    },
+    {
+      "id": "lgov_08",
+      "type": "gov",
+      "text": "Your mobile number has been successfully linked to your {bank} account."
+    },
+    {
+      "id": "lper_07",
+      "type": "personal",
+      "text": "Dear patient, your lab reports are ready. Collect them from {city} Diagnostics or view them on the official app."
+    },
+    {
+      "id": "lper_08",
+      "type": "personal",
+      "text": "Dear parent, school will remain closed on {date} due to heavy rain. -{city} Public School"
+    },
+    {
+      "id": "lper_09",
+      "type": "personal",
+      "text": "Meeting moved to {time} tomorrow. Please bring the project files. -{name}"
+    },
+    {
+      "id": "lper_10",
+      "type": "personal",
+      "text": "Happy birthday {name}! Have a wonderful year ahead."
+    },
+    {
+      "id": "ldel_08",
+      "type": "delivery",
+      "text": "Refund of Rs {amt} for your cancelled order {order} has been initiated. It will reflect in your original payment method within 5-7 working days. -{company}"
+    },
+    {
+      "id": "ldel_09",
+      "type": "delivery",
+      "text": "Your {company} order {order} was cancelled as requested. Refund of Rs {amt} will be credited to your source account in 3-5 days."
+    },
+    {
+      "id": "ldel_10",
+      "type": "delivery",
+      "text": "Hi {name}, your refund for order {order} is processed. Rs {amt} has been credited to your {bank} account ending {last4}."
+    },
+    {
+      "id": "ldel_11",
+      "type": "delivery",
+      "text": "Your return pickup for order {order} is scheduled for {date}. Refund will be issued after the item is received."
+    },
+    {
+      "id": "lbill_11",
+      "type": "bill",
+      "text": "Payment of Rs {amt} received towards your {telco} postpaid bill. Thank you for paying on time."
+    },
+    {
+      "id": "lbill_12",
+      "type": "bill",
+      "text": "We have received your payment of Rs {amt} for your {board} bill on {date}. Receipt no {code}."
+    },
+    {
+      "id": "lbill_13",
+      "type": "bill",
+      "text": "Thank you! Your LIC premium of Rs {amt} has been received on {date}."
+    },
+    {
+      "id": "lbill_14",
+      "type": "bill",
+      "text": "Payment received: Rs {amt} for water bill account {code}. -{city} Municipal Corporation"
+    },
+    {
+      "id": "ltxn_29",
+      "type": "debit",
+      "text": "Rs {amt} debited from A/c XX{last4} on {date} towards {merchant}. Not you? Call {tollfree} to report. -{bank}"
+    },
+    {
+      "id": "ltxn_30",
+      "type": "debit",
+      "text": "Rs.{amt} debited from your {bank} A/c XX{last4} on {date}. If this was not you, call {tollfree} or block via the official app."
+    },
+    {
+      "id": "ltxn_31",
+      "type": "debit",
+      "text": "INR {amt} debited from A/c ending {last4} for UPI payment to {name} on {date}. Not you? Call {tollfree}. -{bank}"
+    },
+    {
+      "id": "ltxn_32",
+      "type": "credit",
+      "text": "INR {amt} credited to your A/c XX{last4} on {date}. Avl Bal INR {big_amt}. Queries? Call {tollfree}. -{bank}"
+    },
+    {
+      "id": "lgov_09",
+      "type": "gov",
+      "text": "Your income tax refund of Rs {amt} for AY 2026-27 has been credited to your bank account. Check status at {legit_link}"
+    },
+    {
+      "id": "lgov_10",
+      "type": "gov",
+      "text": "Your ITR for AY 2026-27 has been successfully e-verified. Acknowledgement no {code}. Details: {legit_link}"
+    },
+    {
+      "id": "lgov_11",
+      "type": "gov",
+      "text": "Your passport application {code} is under processing. Track the status at the official Passport Seva website."
+    },
+    {
+      "id": "lgov_12",
+      "type": "gov",
+      "text": "Your driving licence renewal is approved. Download the document from the official Parivahan portal: {legit_link}"
+    }
+  ],
+  "slots": {
+    "bank": [
+      "SBI",
+      "HDFC Bank",
+      "ICICI Bank",
+      "Axis Bank",
+      "Kotak Bank",
+      "PNB",
+      "Bank of Baroda",
+      "Canara Bank"
+    ],
+    "telco": [
+      "Airtel",
+      "Jio",
+      "Vi",
+      "BSNL"
+    ],
+    "courier": [
+      "India Post",
+      "Blue Dart",
+      "Delhivery",
+      "DTDC",
+      "Ekart"
+    ],
+    "company": [
+      "Amazon",
+      "Flipkart",
+      "Myntra",
+      "Meesho",
+      "Swiggy",
+      "Zomato"
+    ],
+    "merchant": [
+      "AMAZON",
+      "SWIGGY",
+      "ZOMATO",
+      "FLIPKART",
+      "BIGBASKET",
+      "IRCTC",
+      "UBER",
+      "MYNTRA"
+    ],
+    "board": [
+      "MSEB",
+      "BESCOM",
+      "TNEB",
+      "UPPCL",
+      "BSES",
+      "TSSPDCL",
+      "KSEB"
+    ],
+    "city": [
+      "Mumbai",
+      "Delhi",
+      "Bengaluru",
+      "Chennai",
+      "Hyderabad",
+      "Pune",
+      "Kolkata",
+      "Lucknow"
+    ],
+    "name": [
+      "Rahul",
+      "Priya",
+      "Amit",
+      "Sneha",
+      "Vikram",
+      "Anjali",
+      "Rohan",
+      "Kavya",
+      "Suresh",
+      "Meena"
+    ],
+    "pct": [
+      "30",
+      "40",
+      "50",
+      "100"
+    ],
+    "time": [
+      "9:30 PM",
+      "10 PM",
+      "8:45 PM",
+      "11 PM",
+      "7:15 PM"
+    ],
+    "legit_link": [
+      "https://www.amazon.in/gp/your-account/orders",
+      "https://www.flipkart.com/account/orders",
+      "https://www.delhivery.com/tracking",
+      "https://www.incometax.gov.in",
+      "https://www.irctc.co.in",
+      "amzn.in/d/{code}"
+    ]
+  },
+  "fake_link_parts": {
+    "brands": [
+      "sbi",
+      "hdfc",
+      "icici",
+      "axis",
+      "kotak",
+      "pnb",
+      "paytm",
+      "amazon",
+      "flipkart",
+      "indiapost",
+      "bsnl",
+      "airtel",
+      "jio",
+      "incometax",
+      "kyc",
+      "bijli",
+      "refund",
+      "reward"
+    ],
+    "words": [
+      "kyc",
+      "update",
+      "verify",
+      "secure",
+      "help",
+      "reward",
+      "support",
+      "online",
+      "service",
+      "care",
+      "pay",
+      "login",
+      "track",
+      "claim"
+    ],
+    "tlds": [
+      "top",
+      "xyz",
+      "live",
+      "info",
+      "online",
+      "site",
+      "click",
+      "in.net",
+      "com",
+      "in",
+      "shop",
+      "icu",
+      "co"
+    ],
+    "paths": [
+      "",
+      "/login",
+      "/kyc",
+      "/verify",
+      "/update",
+      "/track",
+      "/claim",
+      "/pay",
+      "/index.php",
+      "/?id={code}"
+    ],
+    "shorteners": [
+      "bit.ly",
+      "tinyurl.com",
+      "cutt.ly",
+      "rb.gy",
+      "is.gd"
+    ]
+  }
+}

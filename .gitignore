@@ -1,0 +1,43 @@
+# ---- secrets and keys (never commit) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.ppk
+*.key
+id_rsa*
+id_ed25519*
+id_*
+known_hosts
+*.p12
+secrets/
+
+# ---- data: download with scripts/download_data.sh (templates are committed) ----
+data/raw/
+data/processed/
+
+# ---- trained models: always retrain on the target machine (big-endian safety) ----
+artifacts/
+
+# ---- runtime ----
+feedback.db
+*.db
+*.log
+!docs/evidence/*.log
+logs/
+nohup.out
+
+# ---- python ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

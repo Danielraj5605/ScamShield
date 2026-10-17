@@ -1,0 +1,28 @@
+# Multi-label public suffixes (subset of the Public Suffix List, https://publicsuffix.org, MPL-2.0).
+# Single-label TLDs (com, in, top...) are handled automatically.
+co.in
+gov.in
+org.in
+net.in
+ac.in
+edu.in
+nic.in
+res.in
+firm.in
+gen.in
+ind.in
+co.uk
+org.uk
+gov.uk
+ac.uk
+com.au
+net.au
+org.au
+co.nz
+com.sg
+com.my
+co.za
+com.br
+co.jp
+in.net
+com.co

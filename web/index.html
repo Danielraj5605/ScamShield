@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScamShield</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip" href="#message">Skip to message box</a>
+  <header class="top">
+    <div class="wrap">
+      <h1><span aria-hidden="true">🛡️</span> ScamShield</h1>
+      <p class="tag">Is this message safe? Paste it below and we'll check it for scam warning signs.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="check-h">
+      <h2 id="check-h" class="sr-only">Check a message</h2>
+      <label for="message" class="label">Paste the message here</label>
+      <textarea id="message" rows="6" maxlength="2000" placeholder="For example: Your KYC expires today, update now…" aria-describedby="count-hint"></textarea>
+      <div class="row between">
+        <span id="count-hint" class="muted"><span id="count">0</span> / 2000 characters</span>
+      </div>
+      <div class="row">
+        <button id="check" class="primary" type="button">Check message</button>
+        <button id="clear" class="ghost" type="button">Clear</button>
+      </div>
+      <details class="examples">
+        <summary>Try an example</summary>
+        <div id="examples" class="chips" role="list"></div>
+      </details>
+    </section>
+
+    <section id="result" class="card result" aria-live="polite" hidden>
+      <div id="badge" class="badge"><span id="badge-icon" aria-hidden="true"></span><span id="badge-text"></span></div>
+      <p id="type" class="type"></p>
+
+      <h3>Why</h3>
+      <ul id="reasons"></ul>
+
+      <div id="explain-box" class="explain">
+        <h3>In simple words</h3>
+        <p id="explain-text" class="muted">Preparing an explanation…</p>
+        <p id="explain-src" class="tiny muted"></p>
+      </div>
+
+      <h3>What to do</h3>
+      <ul id="advice"></ul>
+
+      <div id="highlight-box" hidden>
+        <h3>Words the AI found suspicious</h3>
+        <p id="highlighted" class="message-view"></p>
+      </div>
+
+      <div id="links-box" hidden>
+        <h3>Links in the message <span class="tiny muted">(made unclickable for your safety)</span></h3>
+        <ul id="links" class="mono"></ul>
+      </div>
+
+      <div class="row between tools">
+        <button id="speak" class="ghost" type="button"><span aria-hidden="true">🔊</span> Read aloud</button>
+        <span id="fb" class="fb">
+          Was this right?
+          <button class="ghost small" data-v="correct" type="button" aria-label="Yes, this was right">👍</button>
+          <button class="ghost small" data-v="wrong" type="button" aria-label="No, this was wrong">👎</button>
+        </span>
+      </div>
+
+      <details class="tech">
+        <summary>Technical details</summary>
+        <dl id="tech"></dl>
+      </details>
+      <p class="tiny muted" id="disclaimer"></p>
+    </section>
+
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+
+  <footer class="wrap foot">
+    <p>We don't store your message. Report fraud: <strong>1930</strong> · cybercrime.gov.in</p>
+    <p class="tiny muted" id="platform">Checking server…</p>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

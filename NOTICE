@@ -1,0 +1,17 @@
+ScamShield — third-party material
+
+Datasets (downloaded at build time, not redistributed in this repository):
+- SMS Spam Collection, T. A. Almeida and J. M. Gómez Hidalgo. UCI Machine Learning Repository. CC BY 4.0.
+  https://archive.ics.uci.edu/dataset/228/sms+spam+collection
+- SMS Phishing Dataset for Machine Learning and Pattern Recognition, S. Mishra and D. Soni (2022).
+  Mendeley Data, V1, doi:10.17632/f45bkkt8pr.1. CC BY 4.0.
+- PhiUSIIL Phishing URL Dataset, A. Prasad and S. Chandra (2024). UCI Machine Learning Repository. CC BY 4.0.
+  https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
+
+Configuration:
+- configs/public_suffixes.txt is a small subset of the Public Suffix List (https://publicsuffix.org), MPL-2.0.
+
+Libraries (installed separately): NumPy, pandas, scikit-learn, joblib, Flask, PyTorch (optional), pytest.
+
+Brand names in configs/brands.json and in the synthetic templates are used only to detect and illustrate
+impersonation. They are trademarks of their respective owners; no affiliation is implied.
