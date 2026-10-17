@@ -107,7 +107,8 @@ Leave them blank and ScamShield uses its built-in explanations. Nothing is downl
 |---|---|
 | Text AI (TF-IDF+LR), neural CNN, link AI, ensemble, guardrails | ✅ implemented and tested |
 | Word-level explanations, reasons, advice (English) | ✅ implemented and tested |
-| Web UI (accessible, read-aloud, dark mode) | ✅ implemented; manual accessibility check pending |
+| Web UI (Carbon-style, self-hosted fonts, dark mode, phone layout), How it works, Privacy and Terms pages, favicon | ✅ implemented and checked in Chrome at desktop and phone widths |
+| Public launch (custom domain, HTTPS, production server, legal review) | ⏳ not done; see [`docs/LAUNCH_CHECKLIST.md`](docs/LAUNCH_CHECKLIST.md) |
 | GenAI explainer with retrieval and validation | ✅ implemented; tested against a fake API. Real-API run pending a key |
 | Zero-shot LLM comparison in evaluation | ✅ implemented; needs an API key to run |
 | LinuxONE (s390x) training, evaluation, tests and benchmark | ✅ done on an IBM z17 VM (evidence in `docs/evidence/`) |
@@ -129,7 +130,7 @@ kb/               safety knowledge base used by the GenAI explainer
 web/              accessible single-page UI
 tests/            48 tests incl. privacy, API, fake-LLM, demo messages; adversarial set
 reports/          metrics and benchmarks per architecture
-docs/             LINUXONE.md, DATA_CARD.md, MODEL_CARD.md, THREAT_MODEL.md, IMPLEMENTATION_PLAN.md, ScamShield_Abstract.pdf, evidence/
+docs/             LINUXONE.md, LAUNCH_CHECKLIST.md, DATA_CARD.md, MODEL_CARD.md, THREAT_MODEL.md, IMPLEMENTATION_PLAN.md, ScamShield_Abstract.pdf, evidence/
 ```
 
 ## Credits

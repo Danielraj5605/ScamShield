@@ -1,26 +1,26 @@
 [
   {
-    "label": "Fake KYC",
+    "label": "Fake KYC alert",
     "expect": "HIGH",
     "text": "Dear customer your SBI KYC expires today. Update now: http://sbi-kyc-update.top/login or your account will be blocked"
   },
   {
-    "label": "Real bank OTP",
+    "label": "Genuine bank OTP",
     "expect": "LOW",
     "text": "482913 is your OTP for txn of Rs 1,250.00 at AMAZON on your HDFC Bank card ending 4521. Do not share it with anyone."
   },
   {
-    "label": "Real debit alert",
+    "label": "Genuine debit alert",
     "expect": "LOW",
     "text": "Rs 2,500 debited from A/c XX4521 on 12-Oct-26 to SWIGGY. Avl Bal Rs 18,220. Not you? Call 1800-XXX-XXXX -ICICI Bank"
   },
   {
-    "label": "Electricity cut-off",
+    "label": "Electricity cut-off threat",
     "expect": "HIGH",
     "text": "Dear consumer, your electricity will be disconnected tonight at 9:30 PM because your previous bill was not updated. Call our officer immediately on 9XXXXX1234"
   },
   {
-    "label": "Digital arrest",
+    "label": "Digital arrest call",
     "expect": "HIGH",
     "text": "This is Mumbai Cyber Crime police. A case is registered against your Aadhaar for money laundering. You are under digital arrest. Stay on the video call."
   },
@@ -40,12 +40,12 @@
     "text": "You have received a cashback of Rs 2,000 from PhonePe. Enter your UPI PIN to receive the amount."
   },
   {
-    "label": "\"Hi mom\" request",
+    "label": "Message from a relative",
     "expect": "MEDIUM+",
     "text": "Mummy it's me, my phone fell and broke so I'm using a friend's number. I need 15000 urgently for my fees, please pay to this UPI now, I'll explain later"
   },
   {
-    "label": "Friend chat",
+    "label": "Chat with a friend",
     "expect": "LOW",
     "text": "Are we still meeting at the cafe at 6? I'll bring the notes"
   }

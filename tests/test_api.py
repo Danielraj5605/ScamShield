@@ -58,9 +58,31 @@ def test_message_text_never_logged(client, caplog):
     assert "UNIQUE-SECRET-TEXT-7731" not in caplog.text
 
 
-def test_ui_served(client):
-    assert b"ScamShield" in client.get("/").data
+def test_ui_and_pages_served(client):
+    for path, marker in [("/", b"Check a message for scam warning signs"), ("/how-it-works", b"How it works"),
+                         ("/privacy", b"Privacy policy"), ("/terms", b"Terms and conditions")]:
+        r = client.get(path)
+        assert r.status_code == 200 and marker in r.data, path
     assert client.get("/static/app.js").status_code == 200
+    assert client.get("/static/style.css").status_code == 200
+
+
+def test_favicons_and_fonts_served(client):
+    for path, kind in [("/favicon.svg", "svg"), ("/favicon.ico", "icon"), ("/apple-touch-icon.png", "png"),
+                       ("/static/fonts/IBMPlexSans-Regular-Latin1.woff2", "font")]:
+        r = client.get(path)
+        assert r.status_code == 200 and len(r.data) > 100, path
+
+
+def test_content_security_policy_is_strict(client):
+    csp = client.get("/").headers["Content-Security-Policy"]
+    assert "unsafe-inline" not in csp and "unsafe-eval" not in csp
+    assert "frame-ancestors 'none'" in csp and "default-src 'self'" in csp
+
+
+def test_unknown_page_is_404(client):
+    assert client.get("/admin").status_code == 404
+    assert client.get("/static/../src/scamshield/api.py").status_code in (400, 404)
 
 
 def test_demo_messages_behave_as_documented(shield):

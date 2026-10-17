@@ -90,7 +90,8 @@ def create_app(shield: ScamShield | None = None) -> Flask:
 
     @app.after_request
     def _headers(resp):
-        resp.headers["Content-Security-Policy"] = "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+        resp.headers["Content-Security-Policy"] = ("default-src 'self'; style-src 'self'; img-src 'self' data:; "
+                                                   "frame-ancestors 'none'; base-uri 'self'; form-action 'self'")
         resp.headers["X-Content-Type-Options"] = "nosniff"
         resp.headers["Referrer-Policy"] = "no-referrer"
         resp.headers["X-Request-Id"] = g.get("rid", "")
@@ -169,6 +170,30 @@ def create_app(shield: ScamShield | None = None) -> Flask:
     @app.get("/static/<path:name>")
     def static_files(name):
         return send_from_directory(WEB_DIR, name)
+
+    @app.get("/how-it-works")
+    def how_it_works():
+        return send_from_directory(WEB_DIR, "how-it-works.html")
+
+    @app.get("/privacy")
+    def privacy_page():
+        return send_from_directory(WEB_DIR, "privacy.html")
+
+    @app.get("/terms")
+    def terms_page():
+        return send_from_directory(WEB_DIR, "terms.html")
+
+    @app.get("/favicon.ico")
+    def favicon_ico():
+        return send_from_directory(WEB_DIR, "favicon.ico")
+
+    @app.get("/favicon.svg")
+    def favicon_svg():
+        return send_from_directory(WEB_DIR, "favicon.svg")
+
+    @app.get("/apple-touch-icon.png")
+    def apple_touch_icon():
+        return send_from_directory(WEB_DIR, "apple-touch-icon.png")
 
     @app.errorhandler(413)
     def too_large(_):

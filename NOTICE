@@ -11,6 +11,9 @@ Datasets (downloaded at build time, not redistributed in this repository):
 Configuration:
 - configs/public_suffixes.txt is a small subset of the Public Suffix List (https://publicsuffix.org), MPL-2.0.
 
+Typeface:
+- IBM Plex Sans and IBM Plex Mono, copyright IBM Corp., SIL Open Font License 1.1. Files and licence are in web/fonts.
+
 Libraries (installed separately): NumPy, pandas, scikit-learn, joblib, Flask, PyTorch (optional), pytest.
 
 Brand names in configs/brands.json and in the synthetic templates are used only to detect and illustrate

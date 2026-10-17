@@ -270,7 +270,7 @@ def _md_table(report: dict) -> str:
         cells = []
         for s in ("test_in", "test_india", "test_cross"):
             v = report["sets"].get(s, {}).get("systems", {}).get(n, {}).get("pr_auc")
-            cells.append("—" if v is None else f"{v:.3f}")
+            cells.append("n/a" if v is None else f"{v:.3f}")
         lines.append(f"| {n} | " + " | ".join(cells) + " |")
     lines += ["", "## ScamShield risk levels", "", "| Test set | recall (HIGH) | recall (HIGH+MEDIUM) | false-positive rate (HIGH) | FPR (HIGH+MEDIUM) |", "|---|---|---|---|---|"]
     for s in ("test_in", "test_india"):

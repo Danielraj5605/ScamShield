@@ -25,7 +25,7 @@ from collections import Counter
 from dataclasses import dataclass
 from functools import lru_cache
 
-from .advice import TYPE_LABELS
+from .advice import TYPE_DESCRIPTIONS, TYPE_LABELS
 from .config import KB_DIR, env, env_bool, env_float, env_int
 
 _TOKEN = re.compile(r"[a-z0-9]+")
@@ -189,7 +189,7 @@ def template_explanation(level: str, scam_type: str | None, reasons: list[str]) 
     head = (f"This looks like a {kind} scam." if kind and level == "HIGH"
             else "This message has warning signs of a scam." if level == "HIGH"
             else "Be careful with this message.")
-    body = " ".join(reasons[:2])
+    body = TYPE_DESCRIPTIONS.get(scam_type or "") or (reasons[0] if reasons else "")
     return f"{head} {body}".strip()
 
 

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy | ScamShield</title>
+  <meta name="description" content="What ScamShield does with the messages you check, what it logs, and what it never does.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="24" height="24">ScamShield</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/">Check a message</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/privacy" aria-current="page">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="page">
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated 17 October 2026</p>
+      <p class="lead">ScamShield does not store the messages you check. It has no accounts, no cookies, no advertising and no analytics.</p>
+
+      <nav class="toc" aria-label="On this page">
+        <strong>On this page</strong>
+        <ol>
+          <li><a href="#what">What ScamShield is</a></li>
+          <li><a href="#message">Your message</a></li>
+          <li><a href="#logs">What the server records</a></li>
+          <li><a href="#feedback">The feedback buttons</a></li>
+          <li><a href="#model">Written explanations from a language model</a></li>
+          <li><a href="#browser">Cookies, storage and third parties</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#choices">Your choices and contact</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="what">1. What ScamShield is</h2>
+      <p>ScamShield is a student project built for the IBM Z Datathon 2026. It checks a text or WhatsApp message for signs of a scam. The project team operates it. This policy describes how the software in the public repository handles data.</p>
+
+      <h2 id="message">2. Your message</h2>
+      <ul>
+        <li>The text you paste is sent to the server only to produce your result.</li>
+        <li>It is held in memory while the result is made, then discarded. It is not written to a database, a file or a log.</li>
+        <li>Links in your message are never opened or visited.</li>
+        <li>Messages longer than 2000 characters are rejected.</li>
+      </ul>
+
+      <h2 id="logs">3. What the server records</h2>
+      <p>The server writes a log line for each check. It contains a random request number, the time, the length of the message in characters, the risk level, the risk score and the processing time. It does not contain the message.</p>
+      <p>The web server's standard access log also records, for each page or request, the address of the device making it, the page requested and the response code. The software keeps the address in memory to limit how many checks one device can make per minute (120 by default). The project does not set an automatic deletion period for logs. They stay on the server until the operator deletes them.</p>
+
+      <h2 id="feedback">4. The feedback buttons</h2>
+      <p>The Yes and No buttons after a result are optional. If you press one, the server saves your answer, the risk level, the model version, the time, and a one-way hash of your message. The hash is created using a secret value held only on the server, so it cannot be used to recover your message. If the server has no secret value set, feedback is switched off and nothing is saved.</p>
+
+      <h2 id="model">5. Written explanations from a language model</h2>
+      <p>The "In plain words" text is written by ScamShield itself unless the operator has switched on a hosted language model. The footer of the home page shows which is in use.</p>
+      <p>When a hosted model is on, the server sends it a scrubbed copy of your message, in which links, email addresses, phone numbers, amounts and other numbers are replaced by placeholders, together with the warning signs that were found. The model's answer is checked before it is shown, and it can never change the risk level. The provider's own privacy terms then apply to what it receives. When no hosted model is on, nothing is sent to any outside service.</p>
+
+      <h2 id="browser">6. Cookies, storage and third parties</h2>
+      <ul>
+        <li>ScamShield sets no cookies and uses no browser storage.</li>
+        <li>The typeface (IBM Plex) is served from the same server. The pages make no requests to font services, analytics, advertising or social media.</li>
+        <li>The "Read aloud" button uses your browser's built-in speech feature. Depending on your browser and device, speech may be produced by an online service. ScamShield does not receive that audio or text.</li>
+        <li>Links to other sites, such as the source code on GitHub, are governed by those sites' own policies.</li>
+      </ul>
+
+      <h2 id="security">7. Security</h2>
+      <p>ScamShield runs on an IBM LinuxONE virtual machine. The server limits the size and number of requests, shows results as plain text so that message content cannot run as code, and listens only on the machine itself unless the operator publishes it. If you use a public copy of ScamShield, check that the address begins with https.</p>
+
+      <h2 id="choices">8. Your choices and contact</h2>
+      <p>You can use ScamShield without giving any personal information. Because your messages are not stored, there is nothing to delete or export. The saved feedback hash cannot be linked back to you or to your message.</p>
+      <p>For questions or concerns, open an issue at <a href="https://github.com/Danielraj5605/ScamShield/issues">github.com/Danielraj5605/ScamShield/issues</a>.</p>
+
+      <h2 id="changes">9. Changes to this policy</h2>
+      <p>If the software changes how it handles data, this page will be updated and the date at the top will change.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <ul class="links">
+        <li><a href="/how-it-works">How it works</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms and conditions</a></li>
+        <li><a href="https://github.com/Danielraj5605/ScamShield">Source code</a></li>
+      </ul>
+      <p>If you have lost money to fraud in India, call 1930 or report at cybercrime.gov.in.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How it works | ScamShield</title>
+  <meta name="description" content="What ScamShield checks, how it reaches a result, what it does not do, and the measured results with their limits.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="24" height="24">ScamShield</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/">Check a message</a>
+        <a href="/how-it-works" aria-current="page">How it works</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="page">
+      <h1>How it works</h1>
+      <p class="lead">ScamShield reads a message, runs several independent checks, and combines them into one risk level with reasons you can read.</p>
+
+      <h2>What happens when you check a message</h2>
+      <ol>
+        <li><strong>The text is cleaned.</strong> Look-alike letters, hidden characters and tricks such as "hxxp" are undone, so a disguised word is read as the word it imitates.</li>
+        <li><strong>Four checks run side by side.</strong>
+          <ul>
+            <li>A wording model scores the language of the message (TF-IDF with logistic regression).</li>
+            <li>A second wording model, a small neural network, reads the raw characters. It was trained from scratch and copes better with odd spellings.</li>
+            <li>A link model scores the address of each link by its shape, for example a bank name inside an unrelated address. It never opens the link.</li>
+            <li>A set of 23 signals looks for known patterns, such as a request to share a one-time password, or a message about a bank that links to a different website. Twenty of these are warning signs and three are signs of a genuine notice.</li>
+          </ul>
+        </li>
+        <li><strong>The results are combined.</strong> A small model learns how much to trust each check. It learned from each check's predictions on messages that check had not seen during its own training, so it does not simply trust a check that is over-confident.</li>
+        <li><strong>Safety rules apply.</strong> Five patterns always give a high-risk result, because missing them costs more than a false alarm: asking you to share an OTP or PIN, asking for your UPI PIN to receive money, a website imitating a bank, a claim of "digital arrest", and a request to install a remote-access app.</li>
+        <li><strong>You get the result.</strong> It includes the reasons, the words that raised the risk, the scam type if recognised, and what to do.</li>
+      </ol>
+
+      <h2>What ScamShield does not do</h2>
+      <ul>
+        <li>It never opens, visits or follows a link in your message.</li>
+        <li>It does not block, delete or reply to anything. It gives advice only.</li>
+        <li>It does not store your message. See the <a href="/privacy">privacy policy</a>.</li>
+        <li>It cannot prove a message is safe. A result of "no common warning signs" only means none were found.</li>
+      </ul>
+
+      <h2>Measured results</h2>
+      <p>These numbers were measured on 17 October 2026 on the server this project runs on, an IBM LinuxONE virtual machine (s390x architecture, 3 processors, 8 GB of memory). The models were also trained there. Each test used messages the models had not seen.</p>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Measured results by test set</caption>
+          <thead><tr><th scope="col">Test set</th><th scope="col">Messages</th><th scope="col">Scams rated high risk</th><th scope="col">Genuine messages rated high risk</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Public text-message data</th><td>916</td><td>96.9%</td><td>0.5%</td></tr>
+            <tr><th scope="row">Indian-context messages written by the team</th><td>461</td><td>100%</td><td>6.6%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Speed on the same server: a median of 2.7 milliseconds per message, with 95 in 100 messages taking under 8.5 milliseconds.</p>
+
+      <h2>Limits you should know about</h2>
+      <ul>
+        <li>On the public data, the combined system performs about the same as the simple wording model alone. Its advantage appears on the Indian-context set.</li>
+        <li>About 5% of genuine bank messages (7 of 132) were wrongly rated high risk on the main test. Under five other test splits the average was about 1%. Treat the real rate as a few percent, not zero.</li>
+        <li>The Indian-context messages were written by the team, and genuine message styles were added after mistakes were studied. That test is therefore not fully independent.</li>
+        <li>The system works in English only. Part of the public training data dates from about 2012.</li>
+        <li>New scam scripts with no familiar warning signs can be missed.</li>
+      </ul>
+      <p>The full report, with confidence intervals, is in the project's public repository: <a href="https://github.com/Danielraj5605/ScamShield/blob/main/reports/metrics_s390x.md">reports/metrics_s390x.md</a>.</p>
+
+      <h2>Where it runs</h2>
+      <p>The wording models, link models and combining model are trained, tested and run on an IBM LinuxONE virtual machine. The server has an on-chip AI accelerator, but ScamShield's models run on the ordinary processors and do not use it.</p>
+      <p>Optionally, a hosted language model can write the plain-words explanation. It only explains the result and cannot change it. If it is not switched on, ScamShield writes the explanation itself. The footer of the home page says which is in use.</p>
+
+      <h2>Source code</h2>
+      <p>The code, data notes, model card and test results are public: <a href="https://github.com/Danielraj5605/ScamShield">github.com/Danielraj5605/ScamShield</a>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <ul class="links">
+        <li><a href="/how-it-works">How it works</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms and conditions</a></li>
+        <li><a href="https://github.com/Danielraj5605/ScamShield">Source code</a></li>
+      </ul>
+      <p>If you have lost money to fraud in India, call 1930 or report at cybercrime.gov.in.</p>
+    </div>
+  </footer>
+</body>
+</html>

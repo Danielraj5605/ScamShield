@@ -4,18 +4,33 @@ from __future__ import annotations
 REPORT_EN = "Report it: call the National Cyber Crime Helpline 1930 or visit cybercrime.gov.in."
 
 TYPE_LABELS = {
-    "kyc": "fake KYC / account-block",
+    "kyc": "fake KYC or account-block",
     "otp_theft": "OTP or card-details theft",
-    "refund_upi": "fake refund / UPI request",
-    "parcel": "fake parcel / delivery",
-    "job": "fake job / task",
+    "refund_upi": "fake refund or UPI request",
+    "parcel": "fake parcel or delivery",
+    "job": "fake job or task",
     "utility": "electricity or connection disconnection",
-    "impersonation": "police / official impersonation (\"digital arrest\")",
-    "prize": "lottery / prize",
+    "impersonation": "police or official impersonation (\"digital arrest\")",
+    "prize": "lottery or prize",
     "loan": "instant loan",
-    "investment": "investment / trading",
+    "investment": "investment or trading",
     "remote_access": "remote-access app",
     "fake_alert": "fake bank alert",
+}
+
+TYPE_DESCRIPTIONS = {
+    "kyc": "Scammers use it to send people to a fake page that captures bank logins and one-time passwords.",
+    "otp_theft": "A one-time password or PIN approves a payment, so anyone who gets it can take money from the account.",
+    "refund_upi": "In UPI you only enter a PIN to send money, so a request to enter it to receive money is a way to take money out.",
+    "parcel": "The small fee or address form is usually a way to collect card details.",
+    "job": "These offers often pay small amounts at first, then ask for fees or deposits that are usually not returned.",
+    "utility": "The threat of an immediate cut-off is used to push people into calling a number or paying through a link.",
+    "impersonation": "Real officials do not arrest anyone or demand money over a message or video call.",
+    "prize": "You cannot win a lottery you never entered. The aim is usually a fee or your bank details.",
+    "loan": "Genuine lenders do not ask for a fee before paying out a loan, so the fee is usually the scam.",
+    "investment": "No legitimate investment can guarantee high returns, and the balances shown to victims are usually fake.",
+    "remote_access": "These apps let a stranger see your screen, read your codes and control your phone.",
+    "fake_alert": "The phone number or link in such an alert usually leads to the scammer, not to your bank.",
 }
 
 ADVICE_EN = {
