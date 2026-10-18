@@ -4,8 +4,8 @@ Every number in this script is measured and comes from `reports/` or `docs/evide
 
 ## Before you present (10 minutes)
 
-- [ ] Server app is running: `ssh -i E:\ssh-keys\l1cc_datathon linux1@<SERVER_IP> "~/scamshield/start_demo.sh"`
-- [ ] Tunnel is open in its own window: `ssh -N -L 8000:127.0.0.1:8000 -i E:\ssh-keys\l1cc_datathon linux1@<SERVER_IP>`
+- [ ] Server app is running: `ssh -i ~/.ssh/l1cc_datathon linux1@<SERVER_IP> "~/scamshield/start_demo.sh"`
+- [ ] Tunnel is open in its own window: `ssh -N -L 8000:127.0.0.1:8000 -i ~/.ssh/l1cc_datathon linux1@<SERVER_IP>`
 - [ ] http://127.0.0.1:8000 loads, and the footer says "Running on IBM LinuxONE (s390x)"
 - [ ] A second terminal is already logged in to the server, with `uname -m` ready to run
 - [ ] Browser zoom at 125 percent, notifications off, other tabs closed
