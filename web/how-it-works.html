@@ -14,13 +14,14 @@
   <a class="skip" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="wrap bar">
-      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="24" height="24">ScamShield</a>
+      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="34" height="34">ScamShield</a>
       <nav class="site-nav" aria-label="Main">
         <a href="/">Check a message</a>
         <a href="/how-it-works" aria-current="page">How it works</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
       </nav>
+      <a class="nav-cta" href="https://github.com/Danielraj5605/ScamShield">Source code</a>
     </div>
   </header>
 
@@ -61,16 +62,16 @@
           <thead><tr><th scope="col">Test set</th><th scope="col">Messages</th><th scope="col">Scams rated high risk</th><th scope="col">Genuine messages rated high risk</th></tr></thead>
           <tbody>
             <tr><th scope="row">Public text-message data</th><td>916</td><td>96.9%</td><td>0.5%</td></tr>
-            <tr><th scope="row">Indian-context messages written by the team</th><td>461</td><td>100%</td><td>6.6%</td></tr>
+            <tr><th scope="row">Indian-context messages written by the team</th><td>461</td><td>100%</td><td>6.2%</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Speed on the same server: a median of 2.7 milliseconds per message, with 95 in 100 messages taking under 8.5 milliseconds.</p>
+      <p>Speed on the same server: a median of 2.4 milliseconds per message, with 95 in 100 messages taking under 6.1 milliseconds. In a separate test of 10,000 new messages, run twice, the server scored about 590 to 600 messages per second using one processor and about 1,015 to 1,025 using two. A third processor did not help reliably on this shared 3-processor virtual machine, and results vary from run to run.</p>
 
       <h2>Limits you should know about</h2>
       <ul>
         <li>On the public data, the combined system performs about the same as the simple wording model alone. Its advantage appears on the Indian-context set.</li>
-        <li>About 5% of genuine bank messages (7 of 132) were wrongly rated high risk on the main test. Under five other test splits the average was about 1%. Treat the real rate as a few percent, not zero.</li>
+        <li>About 4.5% of genuine bank messages (6 of 132) were wrongly rated high risk on the main test. Under five other test splits the average was under 1%. Treat the real rate as a few percent, not zero.</li>
         <li>The Indian-context messages were written by the team, and genuine message styles were added after mistakes were studied. That test is therefore not fully independent.</li>
         <li>The system works in English only. Part of the public training data dates from about 2012.</li>
         <li>New scam scripts with no familiar warning signs can be missed.</li>
@@ -88,13 +89,29 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <ul class="links">
-        <li><a href="/how-it-works">How it works</a></li>
-        <li><a href="/privacy">Privacy policy</a></li>
-        <li><a href="/terms">Terms and conditions</a></li>
-        <li><a href="https://github.com/Danielraj5605/ScamShield">Source code</a></li>
-      </ul>
-      <p>If you have lost money to fraud in India, call 1930 or report at cybercrime.gov.in.</p>
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/"><img src="/favicon.svg" alt="" width="34" height="34">ScamShield</a>
+          <p>Check a message for scam warning signs. Advice only. Your message is not stored.</p>
+          <p>If you have lost money to fraud in India, call 1930 or report at cybercrime.gov.in.</p>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/">Check a message</a></li>
+            <li><a href="/how-it-works">How it works</a></li>
+            <li><a href="https://github.com/Danielraj5605/ScamShield">Source code</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms and conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base"><p>ScamShield is a student project for the IBM Z Datathon 2026.</p></div>
     </div>
   </footer>
 </body>

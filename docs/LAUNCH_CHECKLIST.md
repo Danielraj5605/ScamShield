@@ -24,17 +24,18 @@ Status on 17 October 2026: **not launched.** The app runs on an IBM LinuxONE Com
 |---|---|
 | No emoji or emoji icons | None in any page, script or style sheet; checked by test. |
 | No em-dashes | None in site copy; checked by test. |
-| No purple gradients or any gradients | Flat colours only; single blue accent (IBM Carbon Blue 60); checked by test. |
+| No purple gradients or any gradients | Solid colours only: black background, white text, one green accent. The soft glow behind the hero is a blurred shape, not a gradient. Checked by test. |
 | No over-the-top animation, no cursor effects | No animations, transitions, smooth scrolling or cursor scripts; checked by test. |
 | No fake buttons | Every button performs a real action (check, clear, read aloud, feedback). The example picker loads real demo messages. |
 | No fake reviews, testimonials or metrics | The site shows none. The only figures are measured results with their date, test sizes and limits, on the How it works page. |
 | No fake hero text | The headline and sentence under it state exactly what the tool does. |
 | No stock or AI-generated photos | The site uses no photographs or illustrations. The logo is a plain geometric mark. |
 | No marketing filler copy | Buzzwords are banned by test; copy is plain and specific. |
-| No third-party requests | The IBM Plex typeface is served from the same server; the test run records zero outside requests. |
+| No third-party requests | The Inter and IBM Plex Mono typefaces are served from the same server; the test run records zero outside requests. |
 
 ## 3. Design references
 
-- IBM Carbon Design System (colour tokens, flat panels, square controls, accessible contrast): https://carbondesignsystem.com
-- GOV.UK Design System (plain-language content, restrained banners, accessibility first): https://design-system.service.gov.uk
-- IBM Plex typeface, SIL Open Font Licence: https://github.com/IBM/plex
+- The look follows the reference landing page the team supplied: a large bold headline with an accent word, a pill badge, rounded buttons, a chat-style product card and a soft glow, rebuilt in black and green.
+- GOV.UK Design System, for plain-language content and putting the action first: https://design-system.service.gov.uk
+- Inter typeface (SIL Open Font Licence): https://rsms.me/inter
+- IBM Plex Mono (SIL Open Font Licence), used for code-like text: https://github.com/IBM/plex

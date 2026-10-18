@@ -48,14 +48,14 @@ Measured **on the IBM LinuxONE server** (s390x, IBM z17, 3 vCPU / 8 GB, big-endi
 | Test set | ScamShield PR-AUC | Rules-only baseline | Scams caught (HIGH) | False alarms (HIGH) |
 |---|---|---|---|---|
 | Held-out public SMS data (n=916) | **0.987** | 0.357 | 96.9% | 0.5% |
-| Unseen Indian-context templates (n=461) | **0.997** | 0.926 | 100% | 6.6% |
+| Unseen Indian-context templates (n=461) | **0.997** | 0.936 | 100% | 6.2% |
 
 - **Honest context:** on the public SMS data, the full system (0.987) is on par with a plain TF-IDF model (0.988). The ensemble's benefit shows on the Indian-context set (0.997 vs 0.967 for TF-IDF alone).
-- **Genuine bank messages:** 5.3% of genuine OTP and debit/credit alerts (7 of 132) were rated HIGH on the main split. Re-running the test under five different template splits gave a mean of 1.2% (range 0-2.3%), so treat the real rate as a few percent, not zero. The neural model seems to be the main source of the extra false alarms.
+- **Genuine bank messages:** 4.5% of genuine OTP and debit/credit alerts (6 of 132) were rated HIGH on the main split. Re-running the test under five different template splits gave a mean of 0.6% (range 0-3.1%), so treat the real rate as a few percent, not zero. The neural model seems to be the main source of the extra false alarms.
 - Link AI on 33,373 never-seen domains: PR-AUC 0.920. Cross-source test (n=945): 0.988, no drop, though Naive Bayes scores the same (0.991).
 - Adversarial regression set: 34 of 36. The two misses are a genuine UPI payment confirmation and an insurance-renewal reminder, both rated HIGH.
-- **Speed on s390x:** median 2.7 ms per message (p95 8.5 ms), about 250 messages/s on one thread and 410/s in batches. With word-level explanations the median is 4.1 ms (p95 88 ms).
-- **48 of 48 tests pass on s390x.** Training the whole system on the 3-vCPU VM takes about 11 minutes.
+- **Speed on s390x:** median 2.4 ms per message (p95 6.1 ms), about 340 messages/s on one thread and 600/s in batches. With word-level explanations the median is 3.0 ms (p95 53 ms). Load test on s390x, 10,000 new messages, two runs: about 590 to 600 messages per second with one worker process and about 1,015 to 1,025 with two. A third worker did not help reliably (610 and 870 in the two runs) on this 3-vCPU VM, which also runs the web app. Results vary between runs because the VM is shared (`reports/loadtest_s390x*.json`).
+- **74 of 74 tests pass on s390x.** Training the whole system on the 3-vCPU VM takes about 11 minutes.
 
 Full details, confidence intervals and known failure modes: [`docs/MODEL_CARD.md`](docs/MODEL_CARD.md).
 
@@ -80,6 +80,13 @@ python -m scamshield data && python -m scamshield train && python -m scamshield 
 python -m pytest -q
 python -m scamshield serve                           # http://127.0.0.1:8000
 python -m scamshield analyze "Your KYC expires today, update at sbi-kyc.top"
+```
+
+### Extra commands
+```bash
+python -m scamshield loadtest --n 10000 --workers 1,2,3   # throughput across worker processes, run it on the server
+python -m scamshield blind path/to/messages.csv           # score a hand-collected blind set (see docs/BLIND_SET_GUIDE.md)
+python -m scamshield analyze "message text" --explain     # one message from the command line
 ```
 
 ### Optional: GenAI explanations (free)
@@ -107,7 +114,7 @@ Leave them blank and ScamShield uses its built-in explanations. Nothing is downl
 |---|---|
 | Text AI (TF-IDF+LR), neural CNN, link AI, ensemble, guardrails | ✅ implemented and tested |
 | Word-level explanations, reasons, advice (English) | ✅ implemented and tested |
-| Web UI (Carbon-style, self-hosted fonts, dark mode, phone layout), How it works, Privacy and Terms pages, favicon | ✅ implemented and checked in Chrome at desktop and phone widths |
+| Web UI (black and green, chat-style checker card, self-hosted fonts, phone layout), How it works, Privacy and Terms pages, favicon | ✅ implemented and checked in Chrome at desktop and phone widths |
 | Public launch (custom domain, HTTPS, production server, legal review) | ⏳ not done; see [`docs/LAUNCH_CHECKLIST.md`](docs/LAUNCH_CHECKLIST.md) |
 | GenAI explainer with retrieval and validation | ✅ implemented; tested against a fake API. Real-API run pending a key |
 | Zero-shot LLM comparison in evaluation | ✅ implemented; needs an API key to run |
@@ -128,9 +135,9 @@ src/scamshield/   normalize, urls, signals, features, models/, ensemble, pipelin
 data/templates/   synthetic Indian-context templates (committed); raw/processed data is downloaded/generated
 kb/               safety knowledge base used by the GenAI explainer
 web/              accessible single-page UI
-tests/            48 tests incl. privacy, API, fake-LLM, demo messages; adversarial set
+tests/            74 tests incl. privacy, API, fake-LLM, demo messages; adversarial set
 reports/          metrics and benchmarks per architecture
-docs/             LINUXONE.md, LAUNCH_CHECKLIST.md, DATA_CARD.md, MODEL_CARD.md, THREAT_MODEL.md, IMPLEMENTATION_PLAN.md, ScamShield_Abstract.pdf, evidence/
+docs/             LINUXONE.md, PITCH_SCRIPT.md, ScamShield_Pitch_Deck.pptx, BLIND_SET_GUIDE.md, USER_TEST_GUIDE.md, LAUNCH_CHECKLIST.md, DATA_CARD.md, MODEL_CARD.md, THREAT_MODEL.md, IMPLEMENTATION_PLAN.md, ScamShield_Abstract.pdf, evidence/
 ```
 
 ## Credits

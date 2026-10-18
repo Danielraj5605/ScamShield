@@ -85,7 +85,7 @@ _TEXT_RULES = [
     ("R18", HIGH, 0.25, "refund_upi",
      _rx(r"(sent|send|transfer\w*|paid|credited|payment|paise|money|rs\.? ?\d).{0,80}(by mistake|wrongly|accidentally).{0,100}(return|send (it )?back|refund)"
          r"|(return|send back|refund).{0,40}(money|amount|rs\.? ?\d|paise).{0,60}(by mistake|wrongly|accidentally)"
-         r"|(by mistake|wrongly|accidentally).{0,80}(\d{3,}|rs|paise|money|amount).{0,80}(return|send back|refund)"),
+         r"|(by mistake|wrongly|accidentally).{0,80}(\d{3,}|rs\b|paise|money|amount).{0,80}(return|send back|refund)"),
      "It says money was sent to you by mistake and asks you to send it back. This is a common trick."),
     ("R17", HIGH, 0.3, "otp_theft",
      _rx(r"(enter|update|confirm|verify|share|provide|send).{0,25}(card number|card details|cvv|expiry date|net ?banking|login details|bank details|account details|pan number|aadha+r number|atm pin|debit card)"),
@@ -122,7 +122,7 @@ _SAFE_OTP = re.compile(
 _TXN_WORD = r"(debited|credited|withdrawn|spent|deducted|received|paid|sent)"
 _TXN_ACCT = r"(a/c|acct|account|card|wallet|upi)"
 _TXN_VERB = re.compile(rf"{_TXN_WORD}.{{0,80}}{_TXN_ACCT}|{_TXN_ACCT}.{{0,80}}{_TXN_WORD}", re.I)
-_TXN_REF = re.compile(r"(avl\.? ?bal|available (bal|limit)|bal|ref(erence)?\.? ?(no|number)?|utr|txn id|transaction id|xx\d{3,4}|ending \d{4})", re.I)
+_TXN_REF = re.compile(r"(avl\.? ?bal|available (bal|limit)|\bbal\b|\bref(erence)?\.? ?(no|number)?\b|\butr\b|txn id|transaction id|\bxx\d{3,4}\b|ending \d{4})", re.I)
 _PATH_KW = re.compile(r"(login|signin|verify|kyc|update|secure|account|reward|refund|claim|bank|wallet|confirm)", re.I)
 _BRAND_IN_TEXT = re.compile(r"\b(sbi|hdfc|icici|axis bank|kotak|pnb|bank of baroda|canara|paytm|phonepe|amazon|flipkart|india ?post|income ?tax|uidai|aadha+r|npci|airtel|jio|bsnl|irctc|epfo|fedex|dhl|blue ?dart|delhivery)\b", re.I)
 

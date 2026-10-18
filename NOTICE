@@ -12,7 +12,9 @@ Configuration:
 - configs/public_suffixes.txt is a small subset of the Public Suffix List (https://publicsuffix.org), MPL-2.0.
 
 Typeface:
-- IBM Plex Sans and IBM Plex Mono, copyright IBM Corp., SIL Open Font License 1.1. Files and licence are in web/fonts.
+- Inter, copyright The Inter Project Authors, SIL Open Font License 1.1. Files and licence are in web/fonts.
+- IBM Plex Mono, copyright IBM Corp., SIL Open Font License 1.1. File and licence are in web/fonts.
+- The line icons in the page are simple shapes in the style of Lucide (ISC licence, https://lucide.dev).
 
 Libraries (installed separately): NumPy, pandas, scikit-learn, joblib, Flask, PyTorch (optional), pytest.
 

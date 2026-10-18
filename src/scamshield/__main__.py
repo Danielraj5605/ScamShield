@@ -52,6 +52,16 @@ def cmd_bench(a):
     run_bench(n=a.n, url=a.url, concurrency=a.concurrency)
 
 
+def cmd_loadtest(a):
+    from .loadtest import run_loadtest
+    run_loadtest(n=a.n, workers=tuple(int(w) for w in a.workers.split(",")))
+
+
+def cmd_blind(a):
+    from .blind import evaluate_blind
+    evaluate_blind(a.csv)
+
+
 def cmd_evidence(_):
     """Platform fingerprint, installed package versions and git commit -> docs/evidence/."""
     from importlib import metadata
@@ -105,6 +115,13 @@ def main(argv=None):
     b.add_argument("--url", default=None, help="also benchmark a running server, e.g. http://127.0.0.1:8000")
     b.add_argument("--concurrency", type=int, default=4)
     b.set_defaults(fn=cmd_bench)
+    lt = sub.add_parser("loadtest", help="score many messages across worker processes -> reports/loadtest_<arch>.json")
+    lt.add_argument("--n", type=int, default=10000)
+    lt.add_argument("--workers", default="1,2,3", help="comma-separated worker counts")
+    lt.set_defaults(fn=cmd_loadtest)
+    bl = sub.add_parser("blind", help="score a hand-collected CSV (columns: text,label) -> reports/blind_<arch>.json")
+    bl.add_argument("csv")
+    bl.set_defaults(fn=cmd_blind)
     sub.add_parser("evidence", help="platform fingerprint -> docs/evidence/").set_defaults(fn=cmd_evidence)
     al = sub.add_parser("all", help="data + train + eval + bench + evidence")
     al.add_argument("--no-cnn", action="store_true")

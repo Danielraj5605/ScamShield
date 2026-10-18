@@ -61,3 +61,28 @@ def test_rules_only_baseline():
     assert rules_only_score(prepare("You are under digital arrest").signals) == 1.0
     assert rules_only_score(prepare("see you at 5").signals) == 0.0
     assert all(s.severity != CRITICAL for s in prepare("hello").signals)
+
+
+ALLOWED_CONTROL = (9, 10, 13)   # tab, newline, carriage return
+
+
+def test_no_control_characters_in_source_files():
+    """A stray backspace (a mis-escaped word-boundary marker) once silently broke two regexes. Never again."""
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    suffixes = {".py", ".js", ".css", ".html", ".md", ".json", ".txt", ".sh", ".svg"}
+    bad = []
+    for sub in ("src", "tests", "web", "scripts", "configs", "docs", "kb"):
+        for f in (root / sub).rglob("*"):
+            if f.is_file() and f.suffix in suffixes and "__pycache__" not in f.parts:
+                text = f.read_text(encoding="utf-8", errors="ignore")
+                if any(ord(c) < 32 and ord(c) not in ALLOWED_CONTROL for c in text):
+                    bad.append(str(f.relative_to(root)))
+    assert not bad, "control characters in: " + str(bad)
+
+
+def test_transaction_notice_signal_sees_ref_utr_and_masked_accounts():
+    for msg in ("Rs 500 debited from your account on 12-Oct. UPI Ref No 123456. -SBI",
+                "Your account was credited with Rs 2,000 by NEFT, UTR ABCD1234. -HDFC Bank",
+                "Rs 750 spent on your card XX4521 at AMAZON on 03-Oct."):
+        assert "S02" in ids(msg), msg

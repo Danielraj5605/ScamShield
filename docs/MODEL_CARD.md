@@ -20,20 +20,21 @@ Advisory triage of a single SMS/WhatsApp message pasted by a person (or a helper
 
 ## Results (measured on IBM LinuxONE, s390x, IBM z17 VM; models trained there)
 
-From `reports/metrics_s390x.md` (model `ss-20261017-105456`):
+From `reports/metrics_s390x.md` (model `ss-20261018-141241`):
 
 | Test set | ScamShield PR-AUC | Rules-only | Naive Bayes | TF-IDF only | Recall (HIGH) | False-positive rate (HIGH) |
 |---|---|---|---|---|---|---|
 | test_in (n=916, held-out public data) | 0.987 (95% CI 0.973-0.998) | 0.357 | 0.983 | 0.988 | 0.969 | 0.005 (CI 0.001-0.011) |
-| test_india (n=461, unseen templates) | 0.997 (95% CI 0.994-0.999) | 0.926 | 0.945 | 0.967 | 1.000 | 0.066 (CI 0.038-0.097) |
+| test_india (n=461, unseen templates) | 0.997 (95% CI 0.995-0.999) | 0.936 | 0.945 | 0.967 | 1.000 | 0.062 (CI 0.035-0.092) |
 
 - **On public SMS data the ensemble does not beat a simple TF-IDF model** (0.987 vs 0.988). Its advantage appears on the Indian-context set.
-- **Genuine transactional messages (OTP, debit/credit alerts) rated HIGH:** 7 of 132 (5.3%) on the main split. Re-running the Indian-context test under 5 different template splits (TF-IDF model plus ensemble retrained each time, neural model not included) gave false-alarm rate 1.5% (range 0.4-3.2%) and genuine-transactional rate 1.2% (range 0-2.3%), with 100% of scams rated HIGH in every split. The gap to the main split suggests the neural model adds false alarms on unfamiliar genuine styles.
+- **Genuine transactional messages (OTP, debit/credit alerts) rated HIGH:** 6 of 132 (4.5%) on the main split. Re-running the Indian-context test under 5 different template splits (TF-IDF model plus ensemble retrained each time, neural model not included) gave false-alarm rate 1.3% (range 0-4.4%) and genuine-transactional rate 0.6% (range 0-3.1%), with 100% of scams rated HIGH in every split. The gap to the main split suggests the neural model adds false alarms on unfamiliar genuine styles.
 - Cross-source (text models retrained without Mendeley, tested on it, n=945): TF-IDF PR-AUC 0.988 vs Naive Bayes 0.991. **No measurable drop**, but the 945 messages are a small sample.
 - URL models on unseen domains (n=33,373): average PR-AUC 0.920 (feature HGB 0.878, char-gram LR 0.911). Without the allowlist, 17% of official Indian brand domains would be flagged.
 - Adversarial set: 34 of 36. **Caveat:** written by the same team and extended after seeing failures, so it is a regression suite, not an unbiased estimate.
-- Speed on s390x (3 vCPUs): median 2.7 ms per message (p95 8.5 ms, p99 21 ms), about 250 messages/s single-threaded, 410/s batched; with word explanations the median is 4.1 ms (p95 88 ms).
-- Training time on the VM: TF-IDF 5 s, neural CNN 159 s, link models 127 s, out-of-fold ensemble 372 s.
+- Speed on s390x (3 vCPUs): median 2.4 ms per message (p95 6.1 ms, p99 7.0 ms), about 340 messages/s single-threaded, 600/s batched; with word explanations the median is 3.0 ms (p95 53 ms).
+- Load test on s390x, 10,000 new messages, two runs: about 590 to 600 messages per second with one worker process and about 1,015 to 1,025 with two. A third worker did not help reliably (610 and 870 in the two runs) on this 3-vCPU VM, which also runs the web app. Results vary between runs because the VM is shared (`reports/loadtest_s390x*.json`).
+- Training time on the VM: neural CNN 136 s, link models 125 s, out-of-fold ensemble 326 s; the whole pipeline takes about 11 minutes.
 
 ## Training-data caveat for the ensemble
 The meta-model is trained on **group-out-of-fold** predictions over train and validation data (4 folds, all messages of a template in the same fold). Earlier versions trained it on the validation split only and over-flagged unfamiliar genuine messages; the out-of-fold change cut the multi-split false-alarm rate from about 17% to about 1.5%. Templates for genuine refund, bill and debit styles were added after errors on such messages were examined, so the Indian-context numbers are not a clean blind test.

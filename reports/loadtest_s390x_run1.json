@@ -1,0 +1,61 @@
+{
+  "platform": {
+    "arch": "s390x",
+    "byteorder": "big",
+    "system": "Linux",
+    "platform": "Linux-6.8.0-147-generic-s390x-with-glibc2.39",
+    "hostname": "scamshield",
+    "python": "3.12.3",
+    "cpus": 3,
+    "mem_gib": 7.82,
+    "features_has_nnpa": true,
+    "machine_type": "9175",
+    "libs": {
+      "numpy": "1.26.4",
+      "pandas": "2.1.4+dfsg",
+      "sklearn": "1.4.1.post1",
+      "torch": "2.14.1+cpu",
+      "flask": "3.0.2"
+    }
+  },
+  "messages": 10000,
+  "unique_messages": 10000,
+  "message_source": "synthetic templates, generated with seeds different from training",
+  "includes": "text cleaning, all models, ensemble and decision (no word-level explanations)",
+  "torch_threads_per_worker": 1,
+  "runs": [
+    {
+      "workers": 1,
+      "seconds": 16.56,
+      "messages_per_second": 603.8,
+      "levels": {
+        "HIGH": 4295,
+        "MEDIUM": 77,
+        "LOW": 5628
+      },
+      "speedup_vs_1_worker": 1.0
+    },
+    {
+      "workers": 2,
+      "seconds": 9.78,
+      "messages_per_second": 1022.9,
+      "levels": {
+        "HIGH": 4295,
+        "MEDIUM": 77,
+        "LOW": 5628
+      },
+      "speedup_vs_1_worker": 1.69
+    },
+    {
+      "workers": 3,
+      "seconds": 16.43,
+      "messages_per_second": 608.7,
+      "levels": {
+        "HIGH": 4295,
+        "MEDIUM": 77,
+        "LOW": 5628
+      },
+      "speedup_vs_1_worker": 1.01
+    }
+  ]
+}

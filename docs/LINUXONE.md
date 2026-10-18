@@ -2,7 +2,7 @@
 
 This is the exact procedure for getting a LinuxONE server, deploying ScamShield on it, and collecting the evidence that it runs on IBM Z (s390x).
 
-> Event details below (event code, flavour, one server per team) come from the IBM Z Datathon 2026 setup session as summarised in `IBM_Datathon.md`. Confirm them against the official Hack2Skill guidebook and the organisers' setup link.
+> Event details below (event code, flavour, one server per team) come from the IBM Z Datathon 2026 setup session as presented in the organisers' setup video (https://www.youtube.com/watch?v=HrNNkVyFots). Confirm them against the official Hack2Skill guidebook and the organisers' setup link.
 
 ## 1. Get a server (LinuxONE Community Cloud)
 

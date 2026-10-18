@@ -1,4 +1,4 @@
-[bench] single message, no explanation: {'n': 2000, 'p50_ms': 2.682, 'p95_ms': 8.451, 'p99_ms': 21.362, 'mean_ms': 3.974, 'throughput_msgs_per_s': 251.6}
-[bench] single message + word explanations: {'n': 300, 'p50_ms': 4.087, 'p95_ms': 88.407, 'p99_ms': 164.786, 'mean_ms': 18.962, 'throughput_msgs_per_s': 52.7}
-[bench] batch scoring: {'n': 2000, 'throughput_msgs_per_s': 410.0}
+[bench] single message, no explanation: {'n': 2000, 'p50_ms': 2.438, 'p95_ms': 6.067, 'p99_ms': 7.017, 'mean_ms': 2.954, 'throughput_msgs_per_s': 338.5}
+[bench] single message + word explanations: {'n': 300, 'p50_ms': 3.018, 'p95_ms': 52.853, 'p99_ms': 68.244, 'mean_ms': 11.106, 'throughput_msgs_per_s': 90.0}
+[bench] batch scoring: {'n': 2000, 'throughput_msgs_per_s': 597.3}
 [bench] wrote bench_s390x.json

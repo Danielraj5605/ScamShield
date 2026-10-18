@@ -14,171 +14,305 @@
   <a class="skip" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="wrap bar">
-      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="24" height="24">ScamShield</a>
+      <a class="brand" href="/"><img src="/favicon.svg" alt="" width="34" height="34">ScamShield</a>
       <nav class="site-nav" aria-label="Main">
         <a href="/" aria-current="page">Check a message</a>
         <a href="/how-it-works">How it works</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
       </nav>
+      <a class="nav-cta" href="https://github.com/Danielraj5605/ScamShield">Source code</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="intro-band">
-      <div class="wrap">
-        <h1>Check a message for scam warning signs</h1>
-        <p class="lead">Paste a text or WhatsApp message. ScamShield shows how risky it looks, explains why, and tells you what to do next.</p>
-        <ul class="facts">
-          <li><strong>Your message is not stored</strong><span>It is checked in memory and then discarded.</span></li>
-          <li><strong>Links are never opened</strong><span>Each link is judged by its address only.</span></li>
-          <li><strong>Runs on IBM LinuxONE</strong><span>The models are trained and served on an IBM mainframe.</span></li>
-        </ul>
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="pill"><span class="dot" aria-hidden="true"></span>Runs on IBM LinuxONE</p>
+          <h1 id="hero-h">Check a message for <span class="accent">scam warning signs</span></h1>
+          <p class="lead">Paste a text or WhatsApp message. ScamShield shows how risky it looks, explains why, and tells you what to do next.</p>
+          <div class="hero-actions">
+            <a class="btn primary" id="hero-cta" href="#tool">Check a message</a>
+            <a class="btn secondary" href="/how-it-works">How it works</a>
+          </div>
+          <ul class="chips-row">
+            <li><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Message not stored</li>
+            <li><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Links never opened</li>
+            <li><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Advice only</li>
+          </ul>
+        </div>
+
+        <section class="chat" id="tool" aria-label="Message checker">
+          <div class="chat-head">
+            <img src="/favicon.svg" alt="" width="44" height="44">
+            <div>
+              <p class="chat-title">ScamShield</p>
+              <p class="chat-status" id="chat-status" hidden><span class="dot" aria-hidden="true"></span><span id="status-text"></span></p>
+            </div>
+          </div>
+
+          <div class="chat-body" id="conversation" role="log" aria-live="polite" aria-label="Conversation">
+            <div class="bubble bot"><p>Paste a message below, or try an example. I will tell you how risky it looks and what to do.</p></div>
+            <div class="bubble user" id="user-bubble" hidden><p id="user-text"></p></div>
+            <div class="bubble bot" id="pending-bubble" hidden><p>Checking the message.</p></div>
+            <div class="bubble bot result-bubble" id="reply-bubble" hidden>
+              <div id="verdict" class="verdict" data-level="">
+                <p id="verdict-label" class="verdict-label"></p>
+                <p id="verdict-summary" class="verdict-summary"></p>
+                <p id="scam-type" class="scam-type" hidden></p>
+              </div>
+              <ul class="scale" aria-hidden="true">
+                <li class="s-low">Low</li>
+                <li class="s-med">Medium</li>
+                <li class="s-high">High</li>
+              </ul>
+              <p class="reply-link"><a href="#details">Read the full explanation and what to do</a></p>
+            </div>
+            <p id="error" class="error" role="alert" hidden></p>
+          </div>
+
+          <div class="chat-foot">
+            <p class="label" id="ex-h">Try a common scam pattern</p>
+            <ul class="examples" id="examples" aria-labelledby="ex-h"></ul>
+            <label class="sr-only" for="message">Paste the message here</label>
+            <div class="composer">
+              <textarea id="message" rows="2" maxlength="2000" placeholder="Paste a message here" aria-describedby="count-hint"></textarea>
+              <button id="check" class="btn primary send" type="button">Check</button>
+            </div>
+            <div class="composer-meta">
+              <span id="count-hint"><span id="count">0</span> of 2000 characters</span>
+              <button id="clear" class="btn link" type="button">Clear</button>
+            </div>
+            <p class="note">ScamShield gives advice only and can be wrong. If you are unsure, contact the organisation using the number on your card or in its official app.</p>
+          </div>
+        </section>
       </div>
     </section>
 
-    <div class="wrap work">
-      <div class="layout">
-        <section class="panel" aria-labelledby="in-h">
-          <div class="panel-head"><span class="step" aria-hidden="true">01</span><h2 id="in-h">Message</h2></div>
-          <label for="message">Paste the message here</label>
-          <textarea id="message" maxlength="2000" aria-describedby="count-hint"></textarea>
-          <div class="meta" id="count-hint"><span id="count">0</span> of 2000 characters</div>
-          <div class="actions">
-            <button id="check" class="btn primary" type="button">Check message</button>
-            <button id="clear" class="btn secondary" type="button">Clear</button>
-          </div>
-          <div class="examples-block">
-            <p class="label" id="ex-h">Or try a common scam pattern</p>
-            <ul class="examples" id="examples" aria-labelledby="ex-h"></ul>
-          </div>
-          <p class="note">ScamShield gives advice only and can be wrong. If you are unsure, contact the organisation using the number on your card or in its official app.</p>
-        </section>
-
-        <section class="panel" aria-labelledby="out-h" aria-live="polite">
-          <div class="panel-head"><span class="step" aria-hidden="true">02</span><h2 id="out-h">Result</h2></div>
-          <ol id="placeholder" class="how-to">
-            <li><span>Paste the message you received.</span></li>
-            <li><span>Select Check message.</span></li>
-            <li><span>Read the result, then follow the steps under What to do now.</span></li>
-          </ol>
-          <p id="error" class="error" role="alert" hidden></p>
-          <div id="result" hidden>
-            <div id="verdict" class="verdict" data-level="">
-              <p id="verdict-label" class="verdict-label"></p>
-              <p id="verdict-summary" class="verdict-summary"></p>
-              <p id="scam-type" class="scam-type" hidden></p>
-            </div>
-            <ul class="scale" aria-hidden="true">
-              <li class="s-low">Low</li>
-              <li class="s-med">Medium</li>
-              <li class="s-high">High</li>
-            </ul>
-
-            <div class="block">
-              <h3>In plain words</h3>
-              <p id="explain-text" class="muted">Preparing an explanation.</p>
-              <p id="explain-src" class="small muted"></p>
-            </div>
-
-            <div class="block act">
-              <h3>What to do now</h3>
-              <ol id="advice" class="numbered"></ol>
-            </div>
-
-            <div class="block">
-              <h3>Why this result</h3>
-              <ul id="reasons" class="bullets"></ul>
-            </div>
-
-            <div class="block">
-              <h3>In your message</h3>
-              <p id="annotated" class="annotated"></p>
-              <p id="legend" class="legend"></p>
-            </div>
-
-
-            <div class="tools">
-              <button id="speak" class="btn secondary" type="button">Read aloud</button>
-              <button id="copy" class="btn secondary" type="button">Copy summary</button>
-              <span class="spacer"></span>
-              <span id="fb">
-                <span id="fb-q">Was this result correct?
-                  <button class="btn link" data-v="correct" type="button">Yes</button>
-                  <button class="btn link" data-v="wrong" type="button">No</button>
-                </span>
-                <span id="fb-done" hidden></span>
-              </span>
-            </div>
-
-            <details class="tech">
-              <summary>Technical details</summary>
-              <dl id="tech"></dl>
-            </details>
-            <p id="disclaimer" class="small muted"></p>
-          </div>
-        </section>
-      </div>
-
-      <section class="types" aria-labelledby="types-h">
-        <h2 id="types-h">Scam types ScamShield recognises</h2>
-        <p class="lead">These are the patterns it looks for most. Each one lists what it usually looks like and what to do. It also recognises lottery and prize, instant loan, investment and fake bank alert scams.</p>
-        <div class="types-grid">
-          <article class="type">
-            <h3>Fake KYC or account block</h3>
-            <p><span class="k">Looks like:</span> A message says your account, card or SIM will be blocked unless you update KYC through a link.</p>
-            <p><span class="k">Do this:</span> Banks do not do this by SMS. Open your bank's official app or visit a branch.</p>
-          </article>
-          <article class="type">
-            <h3>Requests for your OTP or PIN</h3>
-            <p><span class="k">Looks like:</span> Someone asks you to read out or forward a one-time password, PIN or CVV.</p>
-            <p><span class="k">Do this:</span> Never share these, even with someone who says they are from your bank.</p>
-          </article>
-          <article class="type">
-            <h3>Fake refund or UPI request</h3>
-            <p><span class="k">Looks like:</span> You are told to approve a request or enter your UPI PIN in order to receive money.</p>
-            <p><span class="k">Do this:</span> You never need a PIN to receive money. Decline the request.</p>
-          </article>
-          <article class="type">
-            <h3>Parcel and delivery fees</h3>
-            <p><span class="k">Looks like:</span> A parcel is said to be held, and a small fee or address update is requested through a link.</p>
-            <p><span class="k">Do this:</span> Check orders only in the official courier or shopping app.</p>
-          </article>
-          <article class="type">
-            <h3>Job and task offers</h3>
-            <p><span class="k">Looks like:</span> Easy daily earnings for liking videos or doing tasks, often with a fee to join.</p>
-            <p><span class="k">Do this:</span> Real employers do not charge you to hire you. Do not pay or share documents.</p>
-          </article>
-          <article class="type">
-            <h3>Electricity or connection cut-off</h3>
-            <p><span class="k">Looks like:</span> A threat that power will be cut tonight unless you call a number or pay at once.</p>
-            <p><span class="k">Do this:</span> Check your bill in the official app or on the electricity board's website.</p>
-          </article>
-          <article class="type">
-            <h3>Police or official impersonation</h3>
-            <p><span class="k">Looks like:</span> A message or caller says a case is registered against you and keeps you on a video call, called "digital arrest".</p>
-            <p><span class="k">Do this:</span> Hang up. Officials do not arrest anyone or demand money over a message or call.</p>
-          </article>
-          <article class="type">
-            <h3>Remote-access apps</h3>
-            <p><span class="k">Looks like:</span> You are asked to install an app such as AnyDesk, or an APK file, to "fix" a problem.</p>
-            <p><span class="k">Do this:</span> Never install it. If you already did, uninstall it and call your bank on the number on your card.</p>
-          </article>
+    <section class="wrap details" id="details" hidden aria-labelledby="details-h">
+      <h2 id="details-h">Full explanation</h2>
+      <div class="details-grid">
+        <div class="card act">
+          <h3>What to do now</h3>
+          <ol id="advice" class="numbered"></ol>
         </div>
-      </section>
-    </div>
+        <div class="card">
+          <h3>In plain words</h3>
+          <p id="explain-text" class="muted">Preparing an explanation.</p>
+          <p id="explain-src" class="small muted"></p>
+        </div>
+        <div class="card">
+          <h3>Why this result</h3>
+          <ul id="reasons" class="bullets"></ul>
+        </div>
+        <div class="card">
+          <h3>In your message</h3>
+          <p id="annotated" class="annotated"></p>
+          <p id="legend" class="legend"></p>
+        </div>
+        <div class="card wide">
+          <div class="tools">
+            <button id="speak" class="btn secondary small" type="button">Read aloud</button>
+            <button id="copy" class="btn secondary small" type="button">Copy summary</button>
+            <span class="spacer"></span>
+            <span id="fb">
+              <span id="fb-q">Was this result correct?
+                <button class="btn link" data-v="correct" type="button">Yes</button>
+                <button class="btn link" data-v="wrong" type="button">No</button>
+              </span>
+              <span id="fb-done" hidden></span>
+            </span>
+          </div>
+          <details class="tech">
+            <summary>Technical details</summary>
+            <dl id="tech"></dl>
+          </details>
+          <p id="disclaimer" class="small muted"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="how-h">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-h">Three steps, a few milliseconds</h2>
+        <p class="lead">No account, no setup. You paste a message and read the result.</p>
+      </div>
+      <ol class="steps">
+        <li class="card">
+          <p class="step-no">01</p>
+          <span class="icon"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></span>
+          <h3>Paste the message</h3>
+          <p class="muted">A text or WhatsApp message, or one of the examples. It is held in memory and discarded.</p>
+        </li>
+        <li class="card">
+          <p class="step-no">02</p>
+          <span class="icon"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span>
+          <h3>Four checks run side by side</h3>
+          <p class="muted">Two wording models, a link model that judges the address only, and 23 signals for known scam patterns.</p>
+        </li>
+        <li class="card">
+          <p class="step-no">03</p>
+          <span class="icon"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Get the verdict and next steps</h3>
+          <p class="muted">A risk level, the reasons in plain words, your message with the risky words marked, and what to do.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="wrap section" aria-labelledby="trust-h">
+      <div class="section-head">
+        <p class="eyebrow">Trust</p>
+        <h2 id="trust-h">Built to be checked, not just believed</h2>
+        <p class="lead">Every figure here was measured, and the limits are published next to it.</p>
+      </div>
+      <div class="bento">
+        <div class="card b3">
+          <span class="icon"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          <h3>Private by design</h3>
+          <ul class="facts-list">
+            <li><strong>Not stored.</strong> The message is held in memory and discarded.</li>
+            <li><strong>Minimal logs.</strong> Only length, risk level and timing are recorded.</li>
+            <li><strong>Links never opened.</strong> A link is judged by its address.</li>
+            <li><strong>Nothing from outside.</strong> The site loads no outside fonts, trackers or ads.</li>
+          </ul>
+            </div>
+        <div class="card b3">
+          <span class="icon"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Measured, with the limits</h3>
+          <div class="stat-row">
+            <div><p class="stat good">96.9%</p><p class="stat-label">of scams rated high risk</p></div>
+            <div><p class="stat warn">0.5%</p><p class="stat-label">of genuine messages wrongly rated high</p></div>
+          </div>
+          <p class="muted small">916 unseen public messages, measured on IBM LinuxONE. On our own Indian-context set, 6.2% of genuine messages were over-flagged. <a href="/how-it-works">Read all the numbers and limits</a>.</p>
+        </div>
+        <div class="card b6">
+          <span class="icon"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg></span>
+          <h3>Runs on IBM LinuxONE</h3>
+          <div class="stat-row">
+            <div><p class="stat">11 min</p><p class="stat-label">to train every model on the server</p></div>
+            <div><p class="stat">74</p><p class="stat-label">automated tests pass there</p></div>
+            <div><p class="stat">590 to 600</p><p class="stat-label">messages a second on one processor</p></div>
+          </div>
+          <p class="muted small">Trained, tested and served on an IBM LinuxONE virtual machine (s390x), scoring 10,000 new messages in each of two runs. The server has an on-chip AI accelerator, which ScamShield does not use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="types-h">
+      <div class="section-head">
+        <p class="eyebrow">Scam types</p>
+        <h2 id="types-h">Scams ScamShield recognises</h2>
+        <p class="lead">Each one lists what it usually looks like and what to do. It also recognises lottery and prize, instant loan, investment and fake bank alert scams.</p>
+      </div>
+      <div class="types-grid">
+        <article class="card type">
+          <h3>Fake KYC or account block</h3>
+          <p><span class="k">Looks like</span>A message says your account, card or SIM will be blocked unless you update KYC through a link.</p>
+          <p><span class="k">Do this</span>Banks do not do this by SMS. Open your bank's official app or visit a branch.</p>
+        </article>
+        <article class="card type">
+          <h3>Requests for your OTP or PIN</h3>
+          <p><span class="k">Looks like</span>Someone asks you to read out or forward a one-time password, PIN or CVV.</p>
+          <p><span class="k">Do this</span>Never share these, even with someone who says they are from your bank.</p>
+        </article>
+        <article class="card type">
+          <h3>Fake refund or UPI request</h3>
+          <p><span class="k">Looks like</span>You are told to approve a request or enter your UPI PIN in order to receive money.</p>
+          <p><span class="k">Do this</span>You never need a PIN to receive money. Decline the request.</p>
+        </article>
+        <article class="card type">
+          <h3>Parcel and delivery fees</h3>
+          <p><span class="k">Looks like</span>A parcel is said to be held, and a small fee or address update is requested through a link.</p>
+          <p><span class="k">Do this</span>Check orders only in the official courier or shopping app.</p>
+        </article>
+        <article class="card type">
+          <h3>Job and task offers</h3>
+          <p><span class="k">Looks like</span>Easy daily earnings for liking videos or doing tasks, often with a fee to join.</p>
+          <p><span class="k">Do this</span>Real employers do not charge you to hire you. Do not pay or share documents.</p>
+        </article>
+        <article class="card type">
+          <h3>Electricity or connection cut-off</h3>
+          <p><span class="k">Looks like</span>A threat that power will be cut tonight unless you call a number or pay at once.</p>
+          <p><span class="k">Do this</span>Check your bill in the official app or on the electricity board's website.</p>
+        </article>
+        <article class="card type">
+          <h3>Police or official impersonation</h3>
+          <p><span class="k">Looks like</span>A message or caller says a case is registered against you and keeps you on a video call, called "digital arrest".</p>
+          <p><span class="k">Do this</span>Hang up. Officials do not arrest anyone or demand money over a message or call.</p>
+        </article>
+        <article class="card type">
+          <h3>Remote-access apps</h3>
+          <p><span class="k">Looks like</span>You are asked to install an app such as AnyDesk, or an APK file, to "fix" a problem.</p>
+          <p><span class="k">Do this</span>Never install it. If you already did, uninstall it and call your bank on the number on your card.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="faq-h">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-h">Frequently asked</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is my message stored?</summary>
+          <p>No. It is held in memory while the result is made, then discarded. The server log keeps only the length of the message, the risk level, the score and the timing. The privacy policy lists everything.</p>
+        </details>
+        <details>
+          <summary>Does ScamShield open the links in my message?</summary>
+          <p>No. It judges a link by its address only, and shows links in a form that cannot be clicked.</p>
+        </details>
+        <details>
+          <summary>Can it be wrong?</summary>
+          <p>Yes, in both directions. It can rate a genuine message as risky, and it can miss a new kind of scam. That is why it gives advice and reasons, not orders. If you are unsure, contact the organisation using the number on your card or in its official app.</p>
+        </details>
+        <details>
+          <summary>Which languages does it work in?</summary>
+          <p>English only for now. Regional languages are a planned next step.</p>
+        </details>
+        <details>
+          <summary>Why does it run on an IBM mainframe?</summary>
+          <p>The realistic use is a bank or telecom checking messages next to its own systems, without sending them to an outside cloud. We trained and ran the whole project on an IBM LinuxONE server to show that this works, and we publish the measurements.</p>
+        </details>
+        <details>
+          <summary>Who built it?</summary>
+          <p>A student team, for the IBM Z Datathon 2026. The code and the test results are public on GitHub.</p>
+        </details>
+      </div>
+      <div class="built">
+        <span>Built with</span>
+        <span class="tag">IBM LinuxONE</span><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">PyTorch</span><span class="tag">Flask</span>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <ul class="links">
-        <li><a href="/how-it-works">How it works</a></li>
-        <li><a href="/privacy">Privacy policy</a></li>
-        <li><a href="/terms">Terms and conditions</a></li>
-        <li><a href="https://github.com/Danielraj5605/ScamShield">Source code</a></li>
-      </ul>
-      <p>If you have lost money to fraud in India, call 1930 or report at cybercrime.gov.in.</p>
-      <p id="platform"></p>
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/"><img src="/favicon.svg" alt="" width="34" height="34">ScamShield</a>
+          <p>Check a message for scam warning signs. Advice only. Your message is not stored.</p>
+          <p>If you have lost money to fraud in India, call 1930 or report at cybercrime.gov.in.</p>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/">Check a message</a></li>
+            <li><a href="/how-it-works">How it works</a></li>
+            <li><a href="https://github.com/Danielraj5605/ScamShield">Source code</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms and conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base"><p id="platform"></p></div>
     </div>
   </footer>
   <script src="/static/app.js"></script>

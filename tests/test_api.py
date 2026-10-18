@@ -69,7 +69,7 @@ def test_ui_and_pages_served(client):
 
 def test_favicons_and_fonts_served(client):
     for path, kind in [("/favicon.svg", "svg"), ("/favicon.ico", "icon"), ("/apple-touch-icon.png", "png"),
-                       ("/static/fonts/IBMPlexSans-Regular-Latin1.woff2", "font")]:
+                       ("/static/fonts/Inter-400-Latin.woff2", "font"), ("/static/grid.svg", "svg")]:
         r = client.get(path)
         assert r.status_code == 200 and len(r.data) > 100, path
 
@@ -96,3 +96,8 @@ def test_demo_messages_behave_as_documented(shield):
         if not ok:
             wrong.append((d["label"], exp, got))
     assert not wrong, wrong
+
+
+def test_pages_and_styles_are_always_revalidated(client):
+    for path in ("/", "/how-it-works", "/static/style.css", "/static/app.js"):
+        assert "no-cache" in client.get(path).headers.get("Cache-Control", ""), path

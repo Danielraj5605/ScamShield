@@ -1,0 +1,5 @@
+[loadtest] 10000 messages (10000 unique), 40 chunks of 256, cpus=3
+[loadtest] workers=1: 603.8 messages/s (16.56 s)
+[loadtest] workers=2: 1022.9 messages/s (9.78 s)
+[loadtest] workers=3: 608.7 messages/s (16.43 s)
+[loadtest] wrote loadtest_s390x.json

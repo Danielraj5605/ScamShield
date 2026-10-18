@@ -1,7 +1,7 @@
 [train] platform=s390x byteorder=big cpus=3 mem_gib=7.82 python=3.12.3 sklearn=1.4.1.post1 torch=2.14.1+cpu
-[train] messages train=5157 val=1134 (1.94s)
-[train] text LR val PR-AUC=0.9788 NB=0.9805 (4.58s)
-[train] text CNN val PR-AUC=0.9796 params=100305 (158.6s)
-[train] URL val PR-AUC hgb=0.7757 char=0.8408 avg=0.8477 lr-baseline=0.7548 (127.47s)
-[train] ensemble (group-out-of-fold over train+val, 4 folds, n=6291) thresholds={'high': 0.4748, 'med': 0.2374, 'targets': {'high_precision': 0.95, 'med_recall': 0.97, 'med_max_fraction_of_high': 0.5}} (372.2s)
-[train] done: ss-20261017-105456
+[train] messages train=5157 val=1134 (1.9s)
+[train] text LR val PR-AUC=0.9788 NB=0.9805 (4.21s)
+[train] text CNN val PR-AUC=0.9796 params=100305 (136.38s)
+[train] URL val PR-AUC hgb=0.7757 char=0.8408 avg=0.8477 lr-baseline=0.7548 (125.22s)
+[train] ensemble (group-out-of-fold over train+val, 4 folds, n=6291) thresholds={'high': 0.4733, 'med': 0.2366, 'targets': {'high_precision': 0.95, 'med_recall': 0.97, 'med_max_fraction_of_high': 0.5}} (325.97s)
+[train] done: ss-20261018-141241

@@ -93,6 +93,9 @@ def create_app(shield: ScamShield | None = None) -> Flask:
         resp.headers["Content-Security-Policy"] = ("default-src 'self'; style-src 'self'; img-src 'self' data:; "
                                                    "frame-ancestors 'none'; base-uri 'self'; form-action 'self'")
         resp.headers["X-Content-Type-Options"] = "nosniff"
+        # Pages, styles and scripts are always revalidated, so a browser never shows an out-of-date design.
+        if request.path in ("/", "/how-it-works", "/privacy", "/terms") or (request.path.startswith("/static/") and not request.path.startswith("/static/fonts/")):
+            resp.headers["Cache-Control"] = "no-cache"
         resp.headers["Referrer-Policy"] = "no-referrer"
         resp.headers["X-Request-Id"] = g.get("rid", "")
         return resp

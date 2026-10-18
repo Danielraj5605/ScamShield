@@ -48,12 +48,12 @@
 | Test set | ScamShield PR-AUC | Rules-only | Recall (HIGH) | False alarms (HIGH) |
 |---|---|---|---|---|
 | test_in (n=916) | 0.987 | 0.357 | 96.9% | 0.5% |
-| test_india (n=461) | 0.997 | 0.926 | 100% | 6.6% |
+| test_india (n=461) | 0.997 | 0.936 | 100% | 6.2% |
 
 - On public SMS data the ensemble is **not** better than plain TF-IDF (0.987 vs 0.988); its gain appears on the Indian-context set (0.997 vs 0.967).
-- Genuine OTP/bank alerts rated HIGH: 5.3% (7 of 132) on the main split; mean 1.2% (0-2.3%) across 5 template splits. The earlier "0 of 132" claim came from a lucky split and has been retracted.
+- Genuine OTP/bank alerts rated HIGH: 4.5% (6 of 132) on the main split; mean 0.6% (0-3.1%) across 5 template splits. The earlier "0 of 132" claim came from a lucky split and has been retracted.
 - Link AI PR-AUC 0.920 (33,373 unseen domains); cross-source 0.988 (n=945); adversarial 34/36.
-- Speed: median 2.7 ms per message (p95 8.5 ms), about 250 msg/s single-threaded, 410 msg/s batched.
+- Speed: median 2.4 ms per message (p95 6.1 ms), about 340 msg/s single-threaded, 600 msg/s batched.
 - Templates for genuine refund, bill and debit styles were added after examining errors, so the Indian-context numbers are not a clean blind test.
 
 ### 0.4 What is still needed

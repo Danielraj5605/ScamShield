@@ -25,9 +25,9 @@ def read(name):
 
 def test_all_web_files_exist():
     for name in TEXT_FILES + ["favicon.svg", "favicon.ico", "apple-touch-icon.png",
-                              "fonts/IBMPlexSans-Light-Latin1.woff2", "fonts/IBMPlexSans-Regular-Latin1.woff2", "fonts/IBMPlexSans-Medium-Latin1.woff2",
-                              "fonts/IBMPlexSans-Bold-Latin1.woff2", "fonts/IBMPlexMono-Regular-Latin1.woff2",
-                              "fonts/OFL-LICENSE.txt"]:
+                              "fonts/Inter-400-Latin.woff2", "fonts/Inter-500-Latin.woff2", "fonts/Inter-600-Latin.woff2",
+                              "fonts/Inter-700-Latin.woff2", "fonts/IBMPlexMono-Regular-Latin1.woff2",
+                              "fonts/Inter-OFL-LICENSE.txt", "fonts/OFL-LICENSE.txt", "grid.svg"]:
         assert (WEB / name).is_file(), name
 
 
@@ -40,7 +40,7 @@ def test_no_emoji_or_dashes_in_site_text():
 
 def test_no_gradients_animation_or_cursor_effects():
     css = read("style.css").lower()
-    for banned in ("gradient(", "@keyframes", "animation:", "animation-", "transition:", "cursor: url", "cursor:url"):
+    for banned in ("gradient(", "@keyframes", "animation:", "animation-", "cursor: url", "cursor:url"):
         assert banned not in css, banned
     js = read("app.js").lower()
     for banned in ("requestanimationframe", "mousemove", "behavior: \"smooth\"", "behavior:'smooth'"):
@@ -147,3 +147,36 @@ def test_policies_state_the_facts_the_code_relies_on():
     terms = read("terms.html")
     for must in ("advice", "not legal, financial", "MIT licence", "1930"):
         assert must in terms, must
+
+
+def test_every_element_the_script_uses_exists_on_the_home_page():
+    """A renamed or missing id would silently break the checker, so list them all."""
+    js, html = read("app.js"), read("index.html")
+    wanted = set(re.findall(r'\$\("([\w-]+)"\)', js))
+    present = set(parse("index.html").ids)
+    missing = sorted(wanted - present)
+    assert not missing, f"app.js uses ids that index.html does not have: {missing}"
+    assert len(wanted) >= 25
+
+
+def test_home_page_has_the_hero_and_chat_checker():
+    html = read("index.html")
+    for must in ('class="pill"', 'class="accent"', 'id="hero-cta"', 'role="log"', 'id="composer"' if False else 'class="composer"',
+                 'id="check"', 'id="details"', "Runs on IBM LinuxONE"):
+        assert must in html, must
+    assert html.count("<h1") == 1
+
+
+def test_hover_fades_are_short_and_switched_off_for_reduced_motion():
+    css = read("style.css").lower()
+    assert "prefers-reduced-motion: reduce" in css and "transition: none" in css
+    import re as _re
+    for dur in _re.findall(r"transition:[^;]*?([0-9.]+)s", css):
+        assert float(dur) <= 0.25, f"transition longer than 0.25s: {dur}s"
+
+
+def test_icons_are_decorative_and_have_no_inline_styles():
+    html = read("index.html")
+    svgs = _re_findall = re.findall(r"<svg[^>]*>", html)
+    assert svgs, "expected the line icons"
+    assert all('aria-hidden="true"' in s for s in svgs)

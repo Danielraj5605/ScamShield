@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17 10:56:26",
+  "generated_at": "2026-10-18 14:14:04",
   "platform": {
     "arch": "s390x",
     "byteorder": "big",
@@ -19,11 +19,11 @@
       "flask": "3.0.2"
     }
   },
-  "model_version": "ss-20261017-105456",
+  "model_version": "ss-20261018-141241",
   "trained_on_arch": "s390x",
   "thresholds": {
-    "high": 0.4748,
-    "med": 0.2374,
+    "high": 0.4733,
+    "med": 0.2366,
     "targets": {
       "high_precision": 0.95,
       "med_recall": 0.97,
@@ -72,7 +72,7 @@
       },
       "scamshield_ci": {
         "pr_auc_95ci": [
-          0.9733,
+          0.9734,
           0.9975
         ],
         "recall_high_95ci": [
@@ -84,14 +84,14 @@
           0.0107
         ]
       },
-      "batch_ms_per_msg": 1.919
+      "batch_ms_per_msg": 1.319
     },
     "test_india": {
       "n": 461,
       "systems": {
         "B0_rules_only": {
-          "pr_auc": 0.9258,
-          "roc_auc": 0.9362,
+          "pr_auc": 0.9361,
+          "roc_auc": 0.9451,
           "recall_at_fpr_1pct": 0.7228
         },
         "B1_naive_bayes": {
@@ -110,8 +110,8 @@
           "recall_at_fpr_1pct": 0.5941
         },
         "scamshield_full": {
-          "pr_auc": 0.997,
-          "roc_auc": 0.9977,
+          "pr_auc": 0.9974,
+          "roc_auc": 0.998,
           "recall_at_fpr_1pct": 0.9059
         }
       },
@@ -121,117 +121,117 @@
         "n_neg": 259,
         "recall_high": 1.0,
         "recall_flagged": 1.0,
-        "fpr_high": 0.0656,
-        "fpr_flagged": 0.1236,
-        "precision_high": 0.9224
+        "fpr_high": 0.0618,
+        "fpr_flagged": 0.1197,
+        "precision_high": 0.9266
       },
       "scamshield_ci": {
         "pr_auc_95ci": [
-          0.9939,
-          0.9992
+          0.9945,
+          0.9994
         ],
         "recall_high_95ci": [
           1.0,
           1.0
         ],
         "fpr_high_95ci": [
-          0.0376,
-          0.0969
+          0.0349,
+          0.0916
         ]
       },
-      "batch_ms_per_msg": 2.032,
-      "legit_transactional_fpr_high": 0.053,
+      "batch_ms_per_msg": 1.559,
+      "legit_transactional_fpr_high": 0.0455,
       "legit_transactional_n": 132,
       "errors_sample": [
         {
           "text": "Reminder from Hyderabad Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.822
+          "score": 0.828
         },
         {
           "text": "Reminder from Kolkata Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.863
+          "score": 0.868
         },
         {
           "text": "Reminder from Chennai Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.834
+          "score": 0.84
         },
         {
           "text": "reminder from lucknow society: water supply will be off tomorrow from 10 am to 2 pm for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.87
+          "score": 0.875
         },
         {
           "text": "Reminder from Pune Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.909
+          "score": 0.913
         },
         {
           "text": "Reminder from Delhi Society: water supply will be off tomorrow from 10 AM to 2 PM for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.855
+          "score": 0.861
         },
         {
           "text": "reminder from bengaluru society: water supply will be off tomorrow from 10 am to 2 pm for tank cleaning.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.868
+          "score": 0.873
         },
         {
           "text": "you paid rs 18,131 to uber using phonepe upi. transaction id hpy9vl8ma1.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.562
+          "score": 0.483
         },
         {
           "text": "You paid Rs 42,590.61 to AMAZON using PhonePe UPI. Transaction ID K1NKXGST89.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.748
+          "score": 0.683
         },
         {
           "text": "You paid Rs 6,230.49 to FLIPKART using PhonePe UPI. Transaction ID VK78M4WB.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.568
+          "score": 0.489
         },
         {
           "text": "you paid rs 25,710 to uber using phonepe upi. transaction id eo593yuxmc.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.651
+          "score": 0.575
         },
         {
           "text": "You paid Rs 17,513 to IRCTC using PhonePe UPI. Transaction ID T98F98T9TG.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.58
+          "score": 0.503
         },
         {
           "text": "You paid Rs 17,519.71 to FLIPKART using PhonePe UPI. Transaction ID NIK6P0A7RM.",
           "label": 0,
           "level": "HIGH",
-          "score": 0.848
-        },
-        {
-          "text": "You paid Rs 15,790.27 to UBER using PhonePe UPI. Transaction ID SRPH0Q5AHZ.",
-          "label": 0,
-          "level": "HIGH",
-          "score": 0.475
+          "score": 0.803
         },
         {
           "text": "Your Aadhaar update request 150DU1QKAT has been successfully completed. -UIDAI",
           "label": 0,
           "level": "HIGH",
-          "score": 0.241
+          "score": 0.249
+        },
+        {
+          "text": "Your Aadhaar update request 52V8B2TUOM has been successfully completed. -UIDAI",
+          "label": 0,
+          "level": "HIGH",
+          "score": 0.283
         }
       ]
     },
@@ -244,7 +244,7 @@
           "category": "benign_scary",
           "expect": "MEDIUM-",
           "got": "HIGH",
-          "score": 0.602,
+          "score": 0.6131,
           "pass": false
         },
         {
@@ -252,7 +252,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "HIGH",
-          "score": 0.5548,
+          "score": 0.561,
           "pass": false
         }
       ],
@@ -262,7 +262,7 @@
           "category": "obfuscation",
           "expect": "HIGH",
           "got": "HIGH",
-          "score": 0.9968,
+          "score": 0.9969,
           "pass": true
         },
         {
@@ -302,7 +302,7 @@
           "category": "obfuscation",
           "expect": "HIGH",
           "got": "HIGH",
-          "score": 0.3872,
+          "score": 0.3953,
           "pass": true
         },
         {
@@ -318,7 +318,7 @@
           "category": "obfuscation",
           "expect": "HIGH",
           "got": "HIGH",
-          "score": 0.9592,
+          "score": 0.9603,
           "pass": true
         },
         {
@@ -326,7 +326,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0122,
+          "score": 0.0088,
           "pass": true
         },
         {
@@ -334,7 +334,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0513,
+          "score": 0.0381,
           "pass": true
         },
         {
@@ -342,7 +342,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0061,
+          "score": 0.006,
           "pass": true
         },
         {
@@ -350,7 +350,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0026,
+          "score": 0.0027,
           "pass": true
         },
         {
@@ -358,7 +358,7 @@
           "category": "benign_scary",
           "expect": "MEDIUM-",
           "got": "LOW",
-          "score": 0.1809,
+          "score": 0.1887,
           "pass": true
         },
         {
@@ -366,7 +366,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0046,
+          "score": 0.0048,
           "pass": true
         },
         {
@@ -374,7 +374,7 @@
           "category": "benign_scary",
           "expect": "MEDIUM-",
           "got": "LOW",
-          "score": 0.0033,
+          "score": 0.0034,
           "pass": true
         },
         {
@@ -382,7 +382,7 @@
           "category": "benign_scary",
           "expect": "MEDIUM-",
           "got": "HIGH",
-          "score": 0.602,
+          "score": 0.6131,
           "pass": false
         },
         {
@@ -390,7 +390,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "HIGH",
-          "score": 0.5548,
+          "score": 0.561,
           "pass": false
         },
         {
@@ -406,7 +406,7 @@
           "category": "no_link_scam",
           "expect": "HIGH",
           "got": "HIGH",
-          "score": 0.2367,
+          "score": 0.2438,
           "pass": true
         },
         {
@@ -422,7 +422,7 @@
           "category": "no_link_scam",
           "expect": "HIGH",
           "got": "HIGH",
-          "score": 0.991,
+          "score": 0.9911,
           "pass": true
         },
         {
@@ -438,7 +438,7 @@
           "category": "no_link_scam",
           "expect": "HIGH",
           "got": "HIGH",
-          "score": 0.844,
+          "score": 0.847,
           "pass": true
         },
         {
@@ -446,7 +446,7 @@
           "category": "no_link_scam",
           "expect": "MEDIUM+",
           "got": "HIGH",
-          "score": 0.9945,
+          "score": 0.9947,
           "pass": true
         },
         {
@@ -454,7 +454,7 @@
           "category": "polite_scam",
           "expect": "MEDIUM+",
           "got": "HIGH",
-          "score": 0.9595,
+          "score": 0.9601,
           "pass": true
         },
         {
@@ -470,7 +470,7 @@
           "category": "polite_scam",
           "expect": "MEDIUM+",
           "got": "HIGH",
-          "score": 0.8264,
+          "score": 0.8338,
           "pass": true
         },
         {
@@ -486,7 +486,7 @@
           "category": "normal_chat",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0043,
+          "score": 0.0044,
           "pass": true
         },
         {
@@ -494,7 +494,7 @@
           "category": "normal_chat",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0185,
+          "score": 0.0191,
           "pass": true
         },
         {
@@ -502,7 +502,7 @@
           "category": "normal_chat",
           "expect": "MEDIUM-",
           "got": "MEDIUM",
-          "score": 0.2954,
+          "score": 0.2971,
           "pass": true
         },
         {
@@ -510,7 +510,7 @@
           "category": "normal_chat",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.0078,
+          "score": 0.0081,
           "pass": true
         },
         {
@@ -518,7 +518,7 @@
           "category": "ambiguous",
           "expect": "MEDIUM+",
           "got": "HIGH",
-          "score": 0.0909,
+          "score": 0.093,
           "pass": true
         },
         {
@@ -526,7 +526,7 @@
           "category": "ambiguous",
           "expect": "MEDIUM-",
           "got": "LOW",
-          "score": 0.1088,
+          "score": 0.1123,
           "pass": true
         },
         {
@@ -534,7 +534,7 @@
           "category": "no_link_scam",
           "expect": "MEDIUM+",
           "got": "HIGH",
-          "score": 0.9958,
+          "score": 0.9959,
           "pass": true
         },
         {
@@ -542,7 +542,7 @@
           "category": "benign_scary",
           "expect": "LOW",
           "got": "LOW",
-          "score": 0.2123,
+          "score": 0.2193,
           "pass": true
         }
       ]
@@ -588,36 +588,36 @@
         "max": 1.0
       },
       "fpr_high": {
-        "mean": 0.0145,
-        "min": 0.0035,
-        "max": 0.032
+        "mean": 0.0132,
+        "min": 0.0,
+        "max": 0.044
       },
       "pr_auc": {
-        "mean": 0.9981,
-        "min": 0.9963,
+        "mean": 0.9987,
+        "min": 0.9975,
         "max": 1.0
       },
       "legit_transactional_fpr_high": {
-        "mean": 0.0123,
+        "mean": 0.0061,
         "min": 0.0,
-        "max": 0.0229
+        "max": 0.0305
       },
       "folds": [
         {
           "fold": 1,
           "n_test": 489,
           "recall_high": 1.0,
-          "fpr_high": 0.0073,
-          "legit_transactional_fpr_high": 0.0153,
-          "pr_auc": 0.998
+          "fpr_high": 0.0,
+          "legit_transactional_fpr_high": 0.0,
+          "pr_auc": 0.9995
         },
         {
           "fold": 2,
           "n_test": 468,
           "recall_high": 1.0,
-          "fpr_high": 0.0262,
-          "legit_transactional_fpr_high": 0.0157,
-          "pr_auc": 0.9963
+          "fpr_high": 0.0187,
+          "legit_transactional_fpr_high": 0.0,
+          "pr_auc": 0.9975
         },
         {
           "fold": 3,
@@ -631,16 +631,16 @@
           "fold": 4,
           "n_test": 482,
           "recall_high": 1.0,
-          "fpr_high": 0.0035,
-          "legit_transactional_fpr_high": 0.0076,
-          "pr_auc": 0.9985
+          "fpr_high": 0.0,
+          "legit_transactional_fpr_high": 0.0,
+          "pr_auc": 0.9987
         },
         {
           "fold": 5,
           "n_test": 446,
           "recall_high": 1.0,
-          "fpr_high": 0.032,
-          "legit_transactional_fpr_high": 0.0229,
+          "fpr_high": 0.044,
+          "legit_transactional_fpr_high": 0.0305,
           "pr_auc": 0.9979
         }
       ]

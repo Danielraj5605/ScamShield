@@ -34,15 +34,19 @@
   }
   function showError(text) { $("error").textContent = text || ""; $("error").hidden = !text; }
   function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function toBottom() { var c = $("conversation"); c.scrollTop = c.scrollHeight; }
 
   msg.addEventListener("input", function () { $("count").textContent = msg.value.length; });
   msg.addEventListener("keydown", function (e) { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) check(); });
   $("check").addEventListener("click", check);
+  $("hero-cta").addEventListener("click", function () { window.setTimeout(function () { msg.focus({ preventScroll: true }); }, 0); });
   $("clear").addEventListener("click", function () {
     msg.value = "";
     $("count").textContent = "0";
-    $("result").hidden = true;
-    $("placeholder").hidden = false;
+    $("user-bubble").hidden = true;
+    $("pending-bubble").hidden = true;
+    $("reply-bubble").hidden = true;
+    $("details").hidden = true;
     showError("");
     last = null;
     msg.focus();
@@ -131,8 +135,10 @@
     $("copy").textContent = "Copy summary";
     $("fb-q").hidden = false;
     $("fb-done").hidden = true;
-    $("placeholder").hidden = true;
-    $("result").hidden = false;
+    $("pending-bubble").hidden = true;
+    $("reply-bubble").hidden = false;
+    $("details").hidden = false;
+    toBottom();
   }
 
   function check() {
@@ -142,15 +148,20 @@
     var btn = $("check");
     btn.disabled = true;
     btn.textContent = "Checking";
+    $("user-text").textContent = text;
+    $("user-bubble").hidden = false;
+    $("reply-bubble").hidden = true;
+    $("details").hidden = true;
+    $("pending-bubble").hidden = false;
+    toBottom();
     post("/api/analyze", { text: text })
       .then(function (r) {
         last = { text: text, r: r };
         render(text, r);
-        if (window.matchMedia("(max-width: 939px)").matches) { $("result").scrollIntoView({ block: "start" }); }
         explain(text);
       })
-      .catch(function (e) { showError(e.message); })
-      .then(function () { btn.disabled = false; btn.textContent = "Check message"; });
+      .catch(function (e) { $("pending-bubble").hidden = true; showError(e.message); toBottom(); })
+      .then(function () { btn.disabled = false; btn.textContent = "Check"; });
   }
 
   function explain(text) {
@@ -230,8 +241,11 @@
     });
   }).catch(function () {});
 
+  // Real status from the server: shown in the card header and the footer.
   fetch("/api/health").then(function (r) { return r.json(); }).then(function (h) {
     var where = h.arch === "s390x" ? "Running on IBM LinuxONE (s390x)" : "Running on " + h.arch;
+    $("status-text").textContent = where;
+    $("chat-status").hidden = false;
     $("platform").textContent = where + ", " + h.cpus + " CPUs. Written explanations: " +
       (h.llm_available ? "language model with built-in fallback." : "built in.");
   }).catch(function () { $("platform").textContent = ""; });
